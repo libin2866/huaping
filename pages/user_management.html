@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" media="all" href="../css/styles.css" />
+<script>
+function css(cs,num)
+{
+    var total=4;
+    for(i=1;i<=total;++i){
+        if(i==num) {
+            document.getElementById('listmenu'+i).className=cs;
+            document.getElementById('part'+i).style.display = "";
+            continue;
+        }
+        document.getElementById("listmenu"+i).className="";
+        document.getElementById('part'+i).style.display = "none";
+    }
+    if(num==2){
+         document.getElementById('paging').style.display = "none";
+    }else{
+         document.getElementById('paging').style.display = "";
+    }
+}
+</script>
+</head>
+
+<body>     
+     
+            <ul class="vertical fl" rel="ver1">
+                <li><a href="#" onclick=css("clicked",1) id="listmenu1" class="clicked">用户组设置</a></li>
+                <li><a href="#" onclick=css("clicked",2) id="listmenu2">用户编辑</a></li>
+                <li><a href="#" onclick=css("clicked",3) id="listmenu3">密码修改</a></li> 
+                <li><a href="#" onclick=css("clicked",4) id="listmenu4">用户日志</a></li>   
+                <!--<li><a rel="external nofollow" href="http://twitter.com/insic">Twitter @insic</a></li>-->
+
+            </ul>
+
+<!--<div> 
+
+ <p class="contitle">帐号: </p>
+<input type="text" class="inputtext" name="userGroup">
+<input name="submit" type="image" class="btnbg" src="../css/images/checkout.gif" /> 
+<input name="add" type="image" class="btnbg2" src="../css/images/add.gif"/>
+</div><br />
+<div class="fortable">
+<table  style="width:100%;">
+    <tr bgcolor="#000" class="tabletitle" border="0px">
+         <td colspan="5" style="text-align:left">辖区列表</td>
+    </tr>
+    <tr border="1px">
+        <td style="width:20%">辖区代码</td><td style="width:15%">辖区级别</td><td style="width:35%">辖区名称</td> <td style="width:20%">决字头</td><td style="width:15%">操作</td>
+    </tr>
+    <tr  bgcolor="#b5b5b5">
+        <td>111111111111</td><td>支队</td><td> 万山交警支队</td><td> </td><td>编辑 删除</td>
+    </tr>
+    <tr  bgcolor="#b5b5b5">
+        <td>111111111112</td><td>支队</td><td> 千山交警支线</td><td> </td><td>编辑 删除</td>
+    </tr>
+</table>
+
+</div>
+<div class="paging">
+
+<table align="center" >
+    <tr>
+   <td> <a href="#">首页</a></td>
+   <td ><a href="#" ><img src="../css/images/left.png"></a></td>
+   <td class="pagenum"> <a href="#" >01</a></td>
+    <td class="currentnum"><a href="#" >02</a></td>
+       <td class="pagenum"> <a href="#" >03</a></td>
+    <td class="pagenum"><a href="#" >04</a></td>
+       <td class="pagenum"> <a href="#" >05</a></td>
+    <td ><a href="#" ><img src="../css/images/right.png"></a></td>
+     <td> <a href="#">尾页</a></td>
+     <td></td>
+     <td> <input name="gotopage" style="margin-left:30px;width:40px"type="text"/> <a href="#">跳转</a></td>
+
+
+</tr>
+</table>
+</div>
+-->
+<div id="part1">
+<img src="pic/user_edit.png" style="float:left;width:820px;height:500px;"/></div>
+<div id="part2" style="display:none;"></div>
+<div id="part3" style="display:none;"></div>
+<div id="part4" style="display:none;"></div>
+
+
+</body>
+</html>
+ 

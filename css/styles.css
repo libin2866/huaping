@@ -1,0 +1,413 @@
+body {
+    font-family: SimHei;
+    font-size: 14px;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    color: #000000;/*font-color262626*/
+    margin: 0;
+    padding: 0;
+     background: rgba(255,255,255,0.4);/*#141414*/
+     /*background-color: transparent;*/
+      background: #fff 4;/*CSS Hack,只能对ie9以下浏览器ie6,ie7,ie8有效，否侧ie10,FF,Cherome会失去透明效果*/
+       filter:alpha(opacity=40);/*只对ie7,ie8有效*/
+
+}
+.mycontent{
+    /*width: 100%;*/
+   /* position: relative;
+     margin-left: 300px;
+    margin-top: 0px;
+   width:1920px;
+    height: 1080px;
+    width: 100%;
+    height: 100%;*/
+    background: rgba(255,255,255,0.4);
+    background: #fff 4;/*CSS Hack,只能对ie9以下浏览器ie6,ie7,ie8有效，否侧ie10,FF,Cherome会失去透明效果*/
+
+       filter:alpha(opacity=40);/*只对ie7,ie8有效*/
+         /*     -moz-opacity:0.6;  
+      -khtml-opacity: 0.6;  
+      opacity: 0.6; */ 
+
+
+}
+
+.wrapper {
+    width: 100%;
+    height: 80px;
+    background : #464646;
+    /*background : -webkit-gradient(linear, left top, left bottom, from(rgb(168,168,168)), to(rgb(69,69,69)));
+    background : -moz-linear-gradient(top, rgb(168,168,168), rgb(69,69,69));*/
+    border-top: 2px solid #939393;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.title {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.fl {
+    float: left;
+     font-family: Arial;
+    font-size: 12px;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.1);/*0.4*/
+   /* color: #000000;font-color262626*/
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.menu {
+    height: 80px;
+    border-left: 1px solid rgba(0,0,0,0.3);
+    border-right: 1px solid rgba(255,255,255,0.3);
+    float:left;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;/*363636*/
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul.menu li {
+    list-style: none;
+    float:left;
+    height: 79px;
+    text-align: center;
+   /* background: -webkit-gradient(radial, 50% 100%, 10, 50% 50%, 90, from(rgba(31,169,244,1)), to(rgba(0,28,78, 1)) );
+    background: -moz-radial-gradient(center 80px 45deg, circle cover, rgba(31,169,244,1) 0%, rgba(0,28,78, 1) 100%);*/
+    }
+
+ul li a {
+    display: block;
+    padding: 0 20px;
+    border-left: 13px solid rgba(255,255,255,1);/*左右边框线条*/
+    border-right: 13px solid rgba(255,255,255,1);/*0,0,0,0.1*/
+    text-align: center;
+    line-height: 35px;/*79px*/
+    font-color:#000000;
+   /* background-color: #ffffff;/*鼠标不停留时的背景颜色，此处为白色*/
+     /*   filter:alpha(opacity=80);  
+      -moz-opacity:0.8;  
+      -khtml-opacity: 0.8;  
+     opacity: 0.8; */
+     background: rgba(255,255,255,0.8);/*#141414*/
+     /*background-color: transparent;*/
+      background: #fff 9;/*CSS Hack,只能对ie9以下浏览器ie6,ie7,ie8有效，否侧ie10,FF,Cherome会失去透明效果*/
+     filter:alpha(opacity=80);/*只对ie7,ie8有效*/
+    /*background : -webkit-gradient(linear, left top, left bottom, from(rgb(168,168,168)), to(rgb(69,69,69)));
+    background : -moz-linear-gradient(top, rgb(168,168,168), rgb(69,69,69));
+    -webkit-transition-property: background;
+    -webkit-transition-duration: 700ms;
+    -moz-transition-property: background;
+    -moz-transition-duration: 700ms;*/
+    }
+body,html{
+  height: 100%;
+
+}
+ul li a:hover {
+    /*background: transparent none;*/
+ background: rgba(0,0,0,0.8);/*#141414*/
+     /*background-color: transparent;*/
+      background: #000 8;/*CSS Hack,只能对ie9以下浏览器ie6,ie7,ie8有效，否侧ie10,FF,Cherome会失去透明效果*/
+     filter:alpha(opacity=80);/*只对ie7,ie8有效*/
+      /*opacity: 0.8;*/ 
+    color:#ffffff;
+}
+
+
+
+ul li.active a{
+    background: -webkit-gradient(radial, 50% 100%, 10, 50% 50%, 90, from(rgba(31,169,244,1)), to(rgba(0,28,78, 1)) );
+    background: -moz-radial-gradient(center 80px 45deg, circle cover, rgba(31,169,244,1) 0%, rgba(0,28,78, 1) 100%);
+}
+
+
+/* Css for vertical sample */
+ul.vertical {
+    margin: 0 auto;
+    width: 160px;
+    height: 100%;
+    background: rgba(255,255,255,0.6);
+      background: #fff 6;/*CSS Hack,只能对ie9以下浏览器ie6,ie7,ie8有效，否侧ie10,FF,Cherome会失去透明效果*/
+       filter:alpha(opacity=60);/*只对ie7,ie8有效*/
+
+
+    /*border: 1px solid #323232;
+    -webkit-border-top-right-radius: 8px;
+    -moz-border-radius-topright: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+    -moz-border-radius-bottomright: 8px;*/
+}
+
+ul.vertical li {
+    list-style: none;
+    position: relative;
+   border-bottom: 1px dotted #000000;
+    /*background: -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 140, from(rgba(31,169,244,0.5)), to(rgba(0,28,78, 0.2)) );
+    background: -moz-radial-gradient(center 80px 45deg, circle cover, rgba(31,169,244,1) 0%, rgba(0,28,78, 1) 100%);
+    */
+}
+/*
+ul.vertical li span {
+    position: absolute;
+    left: 20px;
+    top: 50px;
+    color: #151515;/*#151515
+    text-shadow: 0 1px 1px rgba(0,255,255,0.2);
+}
+*/
+/* 此处定义圆角
+ul.vertical li:first-child a, ul.vertical li:first-child {
+    -webkit-border-top-right-radius: 8px;
+    -moz-border-radius-topright: 8px;
+}
+
+ul.vertical li:last-child a, ul.vertical li:last-child {
+    -webkit-border-bottom-right-radius: 8px;
+    -moz-border-radius-bottomright: 8px;
+}*/
+
+ul.vertical li a{
+    /*
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(117,117,117,1)), to(rgba(68,68,68,1)));
+    background: -moz-linear-gradient(top, rgba(117,117,117,1), rgba(68,68,68,1));*/
+    text-align: center;
+    border-bottom: 3px solid rgba(255,255,255,1);/*上下边框线条#323232*/
+    border-top: 10px solid rgba(255,255,255,1);/*#868686*/
+    /*/*border-right: 1px solid #5a5a5a;1px #5a5a5a*/
+    /*color: #0f0f0f;*/
+
+            filter:alpha(opacity=60);  
+      -moz-opacity:0.6;  
+      -khtml-opacity: 0.6;  
+      opacity: 0.6; 
+   /* -webkit-transition-property: background;
+    -webkit-transition-duration: 700ms;
+    -moz-transition-property: background;
+    -moz-transition-duration: 700ms;*/
+}
+
+ ul.vertical li a:hover {
+  /*  background: transparent none;*/
+    background-color: #000000;
+    filter:alpha(opacity=80);  
+      -moz-opacity:0.8;  
+      -khtml-opacity: 0.8;  
+      opacity: 0.8;  
+
+}
+
+ul.vertical[rel=ver1] li a{
+    /*background: #606060;/*606060*/
+
+        filter:alpha(opacity=80);  
+      -moz-opacity:0.8;  
+      -khtml-opacity: 0.8;  
+      opacity: 0.8;  
+}
+
+.clicked, ul.vertical[rel=ver1] li a:hover{
+   /* background-color: #000000;
+    filter:alpha(opacity=80);  
+      -moz-opacity:0.8;  
+      -khtml-opacity: 0.8;  
+      opacity: 0.8;  */
+      color: #fff;
+       background: rgba(0,0,0,1);
+      background: #000;/*CSS Hack,只能对ie9以下浏览器ie6,ie7,ie8有效，否侧ie10,FF,Cherome会失去透明效果*/
+       filter:alpha(opacity=100);/*只对ie7,ie8有效*/
+}
+
+ .btnbg{
+  /*position: absolute;*/
+  float: left;
+  margin: 10px 10px 0px 0px;
+  width:84px;
+  height:32px;  
+  background: no-repeat top right;
+ }
+
+  .btnbg2{
+  /*position: absolute;*/
+  float: left;
+  margin:10px 10px 0px 0px;
+  width:84px;
+  height:32px;  
+  background: no-repeat top right;
+ }
+.inputtext{
+  /*margin: 0px 5px auto;
+  position:  absolute;
+  /*padding:0 5px 0 5px;/**/
+  float: left;
+  margin-top: 12px;
+  margin-right: 10px;
+  background: #ffffff;
+  text-align:center;
+  border:1px solid #000000;
+    width:220px;
+    height:24px;  
+}
+ .contitle{
+  float: left;
+  margin: 18px 10px 0px 45px;
+  
+  font-size: 14px;
+  font-weight: bold;
+ }
+ .fortable{
+  margin-top: 40px;
+ margin-left: 175px;
+ margin-right: 15px;
+  background: #ffffff;
+  border: 1px solid #5b5b5b;
+  height: 400px;
+}
+
+.filter_area{
+  padding-top: 10px;
+ margin-left: 175px;
+ margin-right: 15px;
+  /*background: #ffffff;
+  border: 1px solid #5b5b5b;*/
+  height: 200px;
+  text-align: center;
+
+}
+.filter_area tr td{
+  height: 35px;
+
+}
+
+.tabletitle{
+  margin-left: 20px;
+  height: 30px;
+  text-align:left;
+  color:#fff;
+}
+.fortable td{
+text-align: center;
+border: none;
+height:25px;
+}
+
+.paging{
+text-align: center;
+padding: 2px;
+}
+
+.paging a{
+ font-size: 12px;
+}
+
+.pagenum{
+   background-image:url(../css/images/page.png);
+   background-position: 1px 3.5px;
+   background-repeat: no-repeat;
+  width:20px;
+
+}
+
+.currentnum{
+   background:url(../css/images/current.png) no-repeat center ;
+  width:25px;
+}
+.currentnum a{
+  font-size: 14px;
+  color: #ffffff;
+}
+
+/*********************************/
+.xmkc {
+  height: 28px;
+  width: 91%;
+  position: relative;
+  border: 1px solid #CCC;
+}
+.xmkc .classlist {
+  position:absolute;
+  z-index:99999;
+  background-color: #F5FBFF;
+  width:91%;
+  border: 1px solid #C9E4F4;
+  font-size: 12px;
+  line-height: 22px;
+}
+.xmkc .classlist li {
+  display: inline;
+}
+.xmkc .classlist li a{
+  padding-left: 0px;
+  padding-right: 0px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+.xmkc .classlist .lis a {
+  text-decoration: none;
+  background:#ffffff;
+  height: 25px;
+  width: 100%;
+  float: left;
+  
+}
+.xmkc  .classlist  .close  {
+  text-decoration: none;
+  height: 22px;
+  width: 100%;
+  float: left;
+  background-color: #D40000;/*E7F2FA*/
+  text-align: center;
+  border: 0px 0 0;
+}
+.xmkc  .classlist  .close a{
+  color: #FFFFFF;
+}
+.xmkc .classlist .lis a:hover {
+  color: #FFF;
+  background-color: #000000;/*0E9CC8*/
+}
+.xmkc .classlist .lis a:active {
+  color: #FFF;
+  background-color: #b5b5b5;/*0D96C0*/
+}
+.selectlist {
+  font-size: 14px;
+  color: #FF6600;
+  background-color: #FFFFFF;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-color: #5b5b5b;/*096A89*/
+  border-right-color: #b5b5b5;/*D3ECFF*/
+  border-bottom-color: #b5b5b5;/*D3ECFF*/
+  border-left-color: #5b5b5b;/*096A89*/
+  padding-right: 3px;
+  padding-left: 3px;
+  text-align: left;
+  width: 90%;
+  line-height: 20px;
+  height: 30px;
+  background: url(./images/Dropdown.png) no-repeat right;
+}

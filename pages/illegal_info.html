@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" media="all" href="../css/styles.css" />
+<script type="text/javascript" src="../js/picker.js"></script>
+<script>
+   
+function css(cs,num)
+{
+    var total=7;
+    for(i=1;i<=total;++i){
+        if(i==num) {
+            document.getElementById('listmenu'+i).className=cs;
+            document.getElementById('part'+i).style.display = "";
+            continue;
+        }
+        document.getElementById("listmenu"+i).className="";
+        document.getElementById('part'+i).style.display = "none";
+    }
+    /*if(num==2||num==6){
+         document.getElementById('paging').style.display = "none";
+    }else{
+         document.getElementById('paging').style.display = "";
+    }*/
+   
+}
+</script>
+
+</head>
+
+<body>     
+     
+            <ul class="vertical fl" rel="ver1">
+                <li><a href="#" onclick=css("clicked",1) id="listmenu1" class="clicked">综合查询</a></li>
+                <li><a href="#" onclick=css("clicked",2) id="listmenu2">违法数据录入</a></li>
+                <li><a href="#" onclick=css("clicked",3) id="listmenu3">数据审核</a></li>
+                <li><a href="#" onclick=css("clicked",4) id="listmenu4">数据复核</a></li>
+                <li><a href="#" onclick=css("clicked",5) id="listmenu5">违法公告</a></li>
+                <li><a href="#" onclick=css("clicked",6) id="listmenu6">违法处理</a></li>
+                <li><a href="#" onclick=css("clicked",7) id="listmenu7">白名单管理</a></li>
+
+            </ul>
+<div id="part1">
+    
+    <div class="filter_area"> 
+        <table  style="width:100%;background: #ffffff;border: 1px solid #5b5b5b;" cellspacing="0">
+            
+            <tr bgcolor="#000" class="tabletitle" border="0px">
+                 <td colspan="4" style="text-align:left">综合查询</td>
+            </tr>
+            <tr>
+                <td style="width:15%">违法时间</td><td style="width:35%"></td><td style="width:15%">至</td><td style="width:35%"></td>
+            </tr>
+            <tr>
+                <td style="width:15%">路&nbsp;&nbsp;&nbsp;&nbsp;口</td>
+                <td align="left" style="width:35%"> 
+                    <div class="xmkc" style="border:0px;"> 
+                        <div><input name="class_lk" id="class_lk" readonly="readonly" type="text" class="selectlist" onClick=clicked('lk'); value="请选择路口"></div>
+                        <div id="hh_lk" style="display:none" class="classlist">
+                           <ul>
+                              <li class="lis"><a href="#" onClick="gets_value('ASP','lk')">ASP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('PHP','lk')">PHP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('JSP','lk')">JSP</a></li>
+                            </ul>
+                            <span onclick="hh_lk.style.display='none'" class="close"><a href="#">关闭</a></span>
+                        </div>
+                    </div>
+                </td>
+                <td style="width:15%">车&nbsp;&nbsp;&nbsp;&nbsp;道</td>
+                <td align="left" style="width:35%"> 
+                     <div class="xmkc" style="border:0px;"> 
+                        <div><input name="class" id="class_cd" readonly="readonly" type="text" class="selectlist" onClick=clicked('cd'); value="请选择车道"></div>
+                        <div id="hh_cd" style="display:none" class="classlist">
+                           <ul>
+                              <li class="lis"><a href="#" onClick="gets_value('ASP','cd')">ASP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('PHP','cd')">PHP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('JSP','cd')">JSP</a></li>
+                            </ul>
+                            <span onclick="hh_cd.style.display='none'" class="close"><a href="#">关闭</a></span>
+                        </div>
+                    </div>
+
+                </td>
+            </tr>
+        <tr>
+               <td style="width:15%">行驶方向</td>
+               <td align="left" style="width:35%"> 
+                  <div class="xmkc" style="border:0px;"> 
+                        <div><input name="class" id="class_fx" readonly="readonly" type="text" class="selectlist" onClick=clicked('fx'); value="请选择行驶方向"></div>
+                        <div id="hh_fx" style="display:none" class="classlist">
+                           <ul>
+                              <li class="lis"><a href="#" onClick="gets_value('ASP','fx')">ASP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('PHP','fx')">PHP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('JSP','fx')">JSP</a></li>
+                            </ul>
+                            <span onclick="hh_fx.style.display='none'" class="close"><a href="#">关闭</a></span>
+                        </div>
+                    </div>
+               </td>
+           <td style="width:15%">车牌号码</td>
+           <td align="left" style="width:35%"> 
+                 <div class="xmkc" style="border:0px;"> 
+                        <div>
+                            <input name="class" id="class_jc" style=" width:30%;"readonly="readonly" type="text" class="selectlist" onClick=clicked('jc'); value="选择">
+                            <input type="text" style="width:55%;height:28px;" name="carNum">
+                        </div> 
+                        <div id="hh_jc" style="display:none;width:30%"  class="classlist">
+                           <ul>
+                              <li class="lis"><a href="#" onClick="gets_value('沪','jc')">沪</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('浙','jc')">浙</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('贵','jc')">贵</a></li>
+                            </ul>
+                            <span onclick="hh_jc.style.display='none'"  class="close"><a href="#">关闭</a></span>
+                        </div>
+                </div>
+           </td>
+        </tr>
+            <tr>
+                 <td style="width:15%">车&nbsp;&nbsp;&nbsp;&nbsp;速  </td><td style="width:35%;text-align:left;"> <input type="text" style="width:30%;height:25px;margin-top:3px;" name="userGroup">&nbsp;至&nbsp;<input type="text" style="width:30%;height:25px;margin-top:3px;" name="userGroup">&nbsp;公里/小时</td><td style="width:15%"> </td>
+
+                 <td style="width:35%">   <input name="submit" type="image" style="margin-top:5px;width:84px;height:32px;" src="../css/images/checkout.gif" /> 
+                <input name="add" type="image" style="margin-top:5px;width:84px;height:32px;" src="../css/images/add.gif"/></td>
+            </tr>
+       
+        </table>
+         <!--<p class="contitle">综合查询: </p>
+        <input type="text" class="inputtext" name="userGroup">
+       -->
+    </div>
+    <div class="fortable" style="margin-top:10px;">
+        <table  style="width:100%;" cellspacing="0">
+            <tr bgcolor="#000" class="tabletitle" border="0px">
+                 <td colspan="8" style="text-align:left">查询结果</td>
+            </tr>
+            <tr border="1px">
+                <td style="width:5%">选择</td><td style="width:10%">号牌种类</td><td style="width:15%">车牌号码</td><td style="width:20%">违法时间</td> <td style="width:15%">路口</td><td style="width:10%">行使方向</td><td style="width:10%">车速</td><td style="width:15%">操作</td>
+            </tr>
+            <tr  bgcolor="#b5b5b5">
+                <td><input type="checkbox"></td><td>小型汽车</td><td>沪DH620</td><td>2013-07-22 07:39:12 </td><td>张江湾卡口</td><td>进城</td><td>180km/h</td><td>编辑 删除</td>
+            </tr>
+            <tr  bgcolor="#c6c6c6">
+                <td><input type="checkbox"></td><td>支队</td><td> 沪A1234</td><td>2013-07-23 08:32:21 </td><td>张江湾卡口</td><td>出城</td><td>200km/s</td><td>编辑 删除</td>
+            </tr>
+         </table>
+
+    </div>
+    
+  <!--<img src="pic/H1.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:490px;"/>-->
+
+</div>
+<div id="part2" style="display:none;"><img src="pic/H2.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:495px;"/></div>
+<div id="part3" style="display:none;"><img src="pic/H3.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:490px;"/></div>
+<div id="part4" style="display:none;"><img src="pic/H4.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:490px;"/></div>
+<div id="part5" style="display:none;"><img src="pic/H5.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:490px;"/></div>
+<div id="part6" style="display:none;"></div>
+<div id="part7" style="display:none;"><img src="pic/H7.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:490px;"/></div>
+
+<div class="paging" id="paging">
+    <table align="center" >
+        <tr>
+       <td> <a href="#">首页</a></td>
+       <td><a href="#" ><img src="../css/images/left.png" ></a></td>
+       <td class="pagenum"> <a href="#" >01</a></td>
+        <td class="currentnum"><a href="#" >02</a></td>
+           <td class="pagenum"> <a href="#" >03</a></td>
+        <td class="pagenum"><a href="#" >04</a></td>
+           <td class="pagenum"> <a href="#" >05</a></td>
+        <td ><a href="#" ><img src="../css/images/right.png"></a></td>
+         <td> <a href="#">尾页</a></td>
+         <td></td>
+         <td> <input name="gotopage" style="margin-left:30px;width:40px"type="text"/> <a href="#">跳转</a></td>
+    </tr>
+    </table>
+</div>
+<!---->
+
+
+</body>
+</html>

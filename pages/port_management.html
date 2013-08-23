@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" media="all" href="../css/styles.css" />
+<script >
+function css(cs,num)
+{
+    var total=4;
+    for(i=1;i<=total;++i){
+        if(i==num) {
+            document.getElementById('listmenu'+i).className=cs;
+            document.getElementById('part'+i).style.display = "";
+            continue;
+        }
+        document.getElementById("listmenu"+i).className="";
+        document.getElementById('part'+i).style.display = "none";
+    }
+    if(num==2){
+         document.getElementById('paging').style.display = "none";
+    }else{
+         document.getElementById('paging').style.display = "";
+    }
+}
+</script>
+
+</head>
+
+<body>     
+     
+            <ul class="vertical fl" rel="ver1">
+                <li><a href="#" onclick=css("clicked",1) id="listmenu1" class="clicked">综合查询</a></li>
+                <li><a href="#" onclick=css("clicked",2) id="listmenu2">流量统计</a></li>
+                <li><a href="#" onclick=css("clicked",3) id="listmenu3">违法统计</a></li>
+                <li><a href="#" onclick=css("clicked",4) id="listmenu4">监控点编辑</a></li>
+
+                <!--<li><a rel="external nofollow" href="http://twitter.com/insic">Twitter @insic</a></li>-->
+
+            </ul>
+<div id="part1">
+    <div> 
+
+     <p class="contitle">用户组名称: </p>
+    <input type="text" class="inputtext" name="userGroup">
+    <input name="submit" type="image" class="btnbg" src="../css/images/checkout.gif" /> 
+    <input name="add" type="image" class="btnbg2" src="../css/images/add.gif"/>
+    </div><br />
+    <div class="fortable">
+    <table  style="width:100%;">
+        <tr bgcolor="#000" class="tabletitle" border="0px">
+             <td colspan="4" style="text-align:left">用户组列表</td><!--colspan合并列单元格-->
+        </tr>
+        <tr border="1px">
+            <td style="width:25%">用户组名称</td><td style="width:15%">用户组级别</td> <td style="width:40%">备注</td><td style="width:20%">操作</td>
+        </tr>
+        <tr  bgcolor="#b5b5b5">
+            <td>操作员</td><td>支队</td><td> </td><td>编辑 删除</td>
+        </tr>
+        <tr  bgcolor="#b5b5b5">
+            <td>操作员</td><td>支队</td><td> </td><td>编辑 删除</td>
+        </tr>
+    </table>
+
+    </div>
+   <div class="paging">
+    <table align="center" >
+        <tr>
+       <td> <a href="#">首页</a></td>
+       <td><a href="#" ><img src="../css/images/left.png" ></a></td>
+       <td class="pagenum"> <a href="#" >01</a></td>
+        <td class="currentnum"><a href="#" >02</a></td>
+           <td class="pagenum"> <a href="#" >03</a></td>
+        <td class="pagenum"><a href="#" >04</a></td>
+           <td class="pagenum"> <a href="#" >05</a></td>
+        <td ><a href="#" ><img src="../css/images/right.png"></a></td>
+         <td> <a href="#">尾页</a></td>
+         <td></td>
+         <td> <input name="gotopage" style="margin-left:30px;width:40px"type="text"/> <a href="#">跳转</a></td>
+    </tr>
+    </table>
+</div>
+ 
+</div>
+<div id="part2" style="display:none;"></div>
+<div id="part3" style="display:none;"> <img src="pic/E3_3.png" style="float:left;margin-left:5px;margin-top:5px;width:790px;height:529px;"/></div>
+<div id="part4" style="display:none;"></div>
+
+
+
+</body>
+</html>
