@@ -1,9 +1,4 @@
-﻿/**
-* 防WebQQ整合苹果系统导航菜单界面 周宗桥
-* @2012.11.22 
-*/
-
-var thisPage = 1;//初始化当前页面
+﻿var thisPage = 1;//初始化当前页面
 var count = 0;
 $(function() {
 	init_event();//初始化事件
@@ -977,7 +972,7 @@ BottomBar = function(me){
 	var _PreBox = "<div id='taskPreBox' class='taskPreBox' _olddisplay='' style='display: none;'><a id='taskPre' class='taskPre' hidefocus='true' href='#'></a></div>";
 	var _taskContainner = "<div id='taskContainer' class='taskContainer' style=''></div>";
 	var bottonbarbg = "<div class='bottomBarBg'></div>";
-	var bottomBarBgTask = "<div class='bottomBarBgTask'></div>";
+	var bottomBarBgTask = "<div class='bottomBarBgTask'><img src='images/complogo.png'style='position:absolute;padding:7px 0 0 10px;'></img></div>";
 	
 	return me  = {
 		init:function(){
