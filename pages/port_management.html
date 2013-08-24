@@ -3,6 +3,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link type="text/css" rel="stylesheet" media="all" href="../css/styles.css" />
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=B4b875cddf51e5354459074985315ef8"></script>
+<script type="text/javascript" src="../js/InfoBox_min.js"></script>
+<!--<script type="text/javascript" src="../js/baidumap.js"></script>-->
+
 <script >
 function css(cs,num)
 {
@@ -16,12 +20,13 @@ function css(cs,num)
         document.getElementById("listmenu"+i).className="";
         document.getElementById('part'+i).style.display = "none";
     }
-    if(num==2){
+    if(num==2||num==3){
          document.getElementById('paging').style.display = "none";
     }else{
          document.getElementById('paging').style.display = "";
     }
 }
+
 </script>
 
 </head>
@@ -62,7 +67,118 @@ function css(cs,num)
     </table>
 
     </div>
-   <div class="paging">
+
+ 
+</div>
+<div id="part2" style="display:none;"></div>
+<div id="part3" style="display:none;"> 
+
+    <!--<img src="pic/E3_3.png" style="float:left;margin-left:5px;margin-top:5px;width:790px;height:529px;"/>-->
+    <div name="mainContainer" style="margin-left:175px">
+    <div name="illegalInfoSearch" >
+        <div class="title-active">违章查询<img id="searchbtn" src="../images/pics/Closed.png" style="float:right;height:40px" onclick="openClose('searchTable','searchbtn')"/></div>
+        <div id="searchTable" style="display:none">
+            <form action="" method="post">
+                <table  style="width:100%" >
+                    <tr style="height: 32px; text-align:center" >
+                        <td bgcolor="#b5b5b5" style="width:15%" >车牌号码</td>
+                        <td style="width:5%">
+                            <select style="width:100%">
+                                <option >京</option>
+                                <option >津</option>
+                                <option >沪</option>
+                                <option selected="selected">贵</option>
+                            </select>
+                        </td>
+                        <td style="width:30%"><input type="text"  placeholder="请输入车牌号码，模糊数值用*代替" style="width:98%" required="required"/></td>
+                        <td bgcolor="#b5b5b5" style="width:15%">号牌种类</td>
+                        <td style="width:35%">
+                            <select style="width:100%">
+                                <option selected="selected">全部</option>
+                                <option >小型汽车</option>
+                                <option >中型汽车</option>
+                                <option >大型汽车</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr style="height:32px;text-align:center">
+                        <td bgcolor="#b5b5b5">日期</td>
+                        <td colspan="2"><input type="datetime-local" style="width:98%" required="required"/></td>
+                        <td bgcolor="#b5b5b5">至</td>
+                        <td><input type="datetime-local" style="width:98%" required="required"/></td>
+                    </tr>
+                    <tr style="height:32px;text-align:center">
+                        <td bgcolor="#b5b5b5">路口名称</td>
+                        <td colspan="2">
+                            <select style="width:100%" id="crossName">
+                                <option selected="selected">全部</option>
+                            </select>
+                        </td>
+                        <td bgcolor="#b5b5b5">方向</td>
+                        <td>
+                            <select style="width:100%" id="crossName">
+                                <option selected="selected">全部</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr style="height:32px;text-align:center">
+                        <td bgcolor="#b5b5b5">车道名称</td>
+                        <td colspan="2">
+                            <select style="width:100%" id="crossName">
+                                <option selected="selected">全部</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <button type="reset" style="width:10%;height:32px">重置</button>
+                <button type="submit" style="float:right;height:32px;width:10%">提交查询</button>
+            </form>
+        </div>
+    </div>
+    </br>
+    <div name="illegalInfoTable">
+        <div class="title-active">统计结果
+            <img id="tablebtn" src="../images/pics/Closed.png"  style="float:right;height:40px" onclick="openClose('resultTable','tablebtn')"/>
+            <div id="briefInfo"style="color:#FFFFFF;text-align:center;float:right;"></div>
+        </div>
+        <div id="resultTable" style="display:none">
+            <table id="tableList" style="width:100%">
+                <thead style="height: 32px; text-align:center" bgcolor="#b5b5b5">
+                    <tr bgcolor="#434343">
+                        <th>路口名称</th>
+                        <th>车道名称</th>
+                        <th>行驶方向</th>
+                        <th>违法时间</th>
+                        <th>违法行为</th>
+                        <th>违法数</th>
+                    </tr>
+                </thead>
+                <tbody >
+                </tbody>
+            </table>
+            <div style="height: 32px; width: 100%">
+                <span id="spanLast" style="float:right">最后一页</span>
+                <span id="spanNext" style="float:right">下一页</span>
+                <span id="spanPre" style="float:right">上一页</span>
+                <span id="spanFirst" style="float:right">第一页</span>
+            </div>
+        </div>
+    </div>
+    </br>
+    <div name="Map">
+        <div class="title-active">电子地图
+            <img id="showbtn" src="../images/pics/Closed.png" style="float:right;height:40px" onclick="openClose('BaiduMap','showbtn')"/>
+            <button id="showPoints" style="float:right;margin:8px;height:32px;width:8%;">在地图上显示</button>
+        </div>
+        <div id="BaiduMap" style="display:block;width:100%;height:100%;display:none;"></div>
+    </div>
+</div><!--Maincontainer-->
+
+
+</div>
+<div id="part4" style="display:none;"></div>
+
+   <div id="paging">
     <table align="center" >
         <tr>
        <td> <a href="#">首页</a></td>
@@ -78,14 +194,597 @@ function css(cs,num)
          <td> <input name="gotopage" style="margin-left:30px;width:40px"type="text"/> <a href="#">跳转</a></td>
     </tr>
     </table>
-</div>
- 
-</div>
-<div id="part2" style="display:none;"></div>
-<div id="part3" style="display:none;"> <img src="pic/E3_3.png" style="float:left;margin-left:5px;margin-top:5px;width:790px;height:529px;"/></div>
-<div id="part4" style="display:none;"></div>
-
+    </div>
 
 
 </body>
 </html>
+
+<script type="text/javascript">
+
+var mapResize = function(){
+    var x=document.getElementById("BaiduMap");
+    x.style.height=document.documentElement.clientHeight-x.offsetTop-8+'px';
+}
+mapResize();
+window.onresize=mapResize;
+
+function openClose(id,ctrlid)
+{
+    var st = document.getElementById(id);
+    var ct = document.getElementById(ctrlid);
+    if(st.style.display=="none"){
+        st.style.display="block";
+        ct.src="../images/pics/Opend.png"
+    }
+    else{
+        st.style.display="none";
+        ct.src="../images/pics/Closed.png"
+    }
+    mapResize();
+}
+
+
+var points=[
+['申江路高科中路路口',121.631740,31.206286],
+['紫薇路高科中路路口',121.618836,31.203804],
+['伽利略路蔡伦路路口',121.622384,31.201765],
+['法拉第路张衡路路口',121.626620,31.198726],
+['哥白尼路蔡伦路路口',121.618850,31.199452],
+['哥白尼路张衡路路口',121.619025,31.197387],
+['爱迪生路蔡伦路路口',121.615140,31.199460],
+['爱迪生路张衡路路口',121.615463,31.196749],
+['爱迪生路高科中路路口',121.615144,31.203807],
+['哈雷路蔡伦路路口',121.612090,31.198904],
+['哈雷路李冰路路口',121.610985,31.201352],
+['哈雷路张衡路路口',121.613262,31.196344],
+['李冰路蔡伦路路口',121.609772,31.198487],
+['金科路蔡伦路路口',121.607589,31.198112],
+['金科路高科中路路口',121.607140,31.203831],
+['金科路晨晖路路口',121.606938,31.206861],
+['华佗路蔡伦路路口',121.601270,31.197282],
+['科苑路蔡伦路路口',121.59707,31.196587]
+];
+//id
+var monitor=[
+[0,'申江路','向南'],
+[0,'申江路','向北'],
+[0,'高科中路','向东'],
+[0,'高科中路','向西'],
+[1,'紫薇路','向南'],
+[1,'紫薇路','向北'],
+[1,'高科中路','向东'],
+[1,'高科中路','向西'],
+[2,'伽利略路','向南'],
+[2,'伽利略路','向北'],
+[2,'蔡伦路','向东'],
+[2,'蔡伦路','向西'],
+[3,'法拉第路','向南'],
+[3,'法拉第路','向北'],
+[3,'张衡路','向东'],
+[3,'张衡路','向西'],
+[4,'哥白尼路','向南'],
+[4,'哥白尼路','向北'],
+[4,'蔡伦路','向东'],
+[4,'蔡伦路','向西'],
+[5,'哥白尼路','向南'],
+[5,'哥白尼路','向北'],
+[5,'张衡路','向东'],
+[5,'张衡路','向西'],
+[6,'爱迪生路','向南'],
+[6,'爱迪生路','向北'],
+[6,'蔡伦路','向东'],
+[6,'蔡伦路','向西'],
+[7,'爱迪生路','向南'],
+[7,'爱迪生路','向北'],
+[7,'张衡路','向东'],
+[7,'张衡路','向西'],
+[8,'爱迪生路','向南'],
+[8,'爱迪生路','向北'],
+[8,'高科中路','向东'],
+[8,'高科中路','向西'],
+[9,'哈雷路','向南'],
+[9,'哈雷路','向北'],
+[9,'蔡伦路','向东'],
+[9,'蔡伦路','向西'],
+[10,'哈雷路','向南'],
+[10,'哈雷路','向北'],
+[10,'李冰路','向东'],
+[10,'李冰路','向西'],
+[11,'哈雷路','向南'],
+[11,'哈雷路','向北'],
+[11,'张衡路','向东'],
+[11,'张衡路','向西'],
+[12,'李冰路','向南'],
+[12,'李冰路','向北'],
+[12,'蔡伦路','向东'],
+[12,'蔡伦路','向西'],
+[13,'金科路','向南'],
+[13,'金科路','向北'],
+[13,'蔡伦路','向东'],
+[13,'蔡伦路','向西'],
+[14,'金科路','向南'],
+[14,'金科路','向北'],
+[14,'高科中路','向东'],
+[14,'高科中路','向西'],
+[15,'金科路','向南'],
+[15,'金科路','向北'],
+[15,'晨晖路','向东'],
+[15,'晨晖路','向西'],
+[16,'华佗路','向南'],
+[16,'华佗路','向北'],
+[16,'蔡伦路','向东'],
+[16,'蔡伦路','向西'],
+[17,'科苑路','向南'],
+[17,'科苑路','向北'],
+[17,'蔡伦路','向东'],
+[17,'蔡伦路','向西'],
+]
+
+var informations=[
+[0,'左转车道直行','2013-08-09',13],
+[0,'直行车道左转','2013-08-09',15],
+[0,'闯红灯','2013-08-09',11],
+[0,'违章停车','2013-08-09',18],
+[1,'左转车道直行','2013-08-09',11],
+[1,'直行车道左转','2013-08-09',17],
+[1,'闯红灯','2013-08-09',11],
+[1,'违章停车','2013-08-09',14],
+[2,'左转车道直行','2013-08-09',20],
+[2,'直行车道左转','2013-08-09',14],
+[2,'闯红灯','2013-08-09',6],
+[2,'违章停车','2013-08-09',6],
+[3,'左转车道直行','2013-08-09',3],
+[3,'直行车道左转','2013-08-09',10],
+[3,'闯红灯','2013-08-09',8],
+[3,'违章停车','2013-08-09',7],
+[4,'左转车道直行','2013-08-09',18],
+[4,'直行车道左转','2013-08-09',10],
+[4,'闯红灯','2013-08-09',11],
+[4,'违章停车','2013-08-09',7],
+[5,'左转车道直行','2013-08-09',22],
+[5,'直行车道左转','2013-08-09',13],
+[5,'闯红灯','2013-08-09',9],
+[5,'违章停车','2013-08-09',3],
+[6,'左转车道直行','2013-08-09',8],
+[6,'直行车道左转','2013-08-09',6],
+[6,'闯红灯','2013-08-09',0],
+[6,'违章停车','2013-08-09',12],
+[7,'左转车道直行','2013-08-09',6],
+[7,'直行车道左转','2013-08-09',9],
+[7,'闯红灯','2013-08-09',14],
+[7,'违章停车','2013-08-09',5],
+[8,'左转车道直行','2013-08-09',15],
+[8,'直行车道左转','2013-08-09',18],
+[8,'闯红灯','2013-08-09',13],
+[8,'违章停车','2013-08-09',5],
+[9,'左转车道直行','2013-08-09',20],
+[9,'直行车道左转','2013-08-09',10],
+[9,'闯红灯','2013-08-09',17],
+[9,'违章停车','2013-08-09',19],
+[10,'左转车道直行','2013-08-09',3],
+[10,'直行车道左转','2013-08-09',19],
+[10,'闯红灯','2013-08-09',21],
+[10,'违章停车','2013-08-09',2],
+[11,'左转车道直行','2013-08-09',19],
+[11,'直行车道左转','2013-08-09',9],
+[11,'闯红灯','2013-08-09',24],
+[11,'违章停车','2013-08-09',8],
+[12,'左转车道直行','2013-08-09',3],
+[12,'直行车道左转','2013-08-09',4],
+[12,'闯红灯','2013-08-09',14],
+[12,'违章停车','2013-08-09',4],
+[13,'左转车道直行','2013-08-09',19],
+[13,'直行车道左转','2013-08-09',12],
+[13,'闯红灯','2013-08-09',12],
+[13,'违章停车','2013-08-09',9],
+[14,'左转车道直行','2013-08-09',6],
+[14,'直行车道左转','2013-08-09',20],
+[14,'闯红灯','2013-08-09',0],
+[14,'违章停车','2013-08-09',11],
+[15,'左转车道直行','2013-08-09',11],
+[15,'直行车道左转','2013-08-09',19],
+[15,'闯红灯','2013-08-09',15],
+[15,'违章停车','2013-08-09',7],
+[16,'左转车道直行','2013-08-09',9],
+[16,'直行车道左转','2013-08-09',1],
+[16,'闯红灯','2013-08-09',7],
+[16,'违章停车','2013-08-09',1],
+[17,'左转车道直行','2013-08-09',3],
+[17,'直行车道左转','2013-08-09',6],
+[17,'闯红灯','2013-08-09',1],
+[17,'违章停车','2013-08-09',0],
+[18,'左转车道直行','2013-08-09',2],
+[18,'直行车道左转','2013-08-09',2],
+[18,'闯红灯','2013-08-09',2],
+[18,'违章停车','2013-08-09',0],
+[19,'左转车道直行','2013-08-09',3],
+[19,'直行车道左转','2013-08-09',0],
+[19,'闯红灯','2013-08-09',6],
+[19,'违章停车','2013-08-09',6],
+[20,'左转车道直行','2013-08-09',2],
+[20,'直行车道左转','2013-08-09',1],
+[20,'闯红灯','2013-08-09',1],
+[20,'违章停车','2013-08-09',1],
+[21,'左转车道直行','2013-08-09',1],
+[21,'直行车道左转','2013-08-09',1],
+[21,'闯红灯','2013-08-09',10],
+[21,'违章停车','2013-08-09',6],
+[22,'左转车道直行','2013-08-09',0],
+[22,'直行车道左转','2013-08-09',4],
+[22,'闯红灯','2013-08-09',30],
+[22,'违章停车','2013-08-09',3],
+[23,'左转车道直行','2013-08-09',8],
+[23,'直行车道左转','2013-08-09',8],
+[23,'闯红灯','2013-08-09',20],
+[23,'违章停车','2013-08-09',8],
+[24,'左转车道直行','2013-08-09',4],
+[24,'直行车道左转','2013-08-09',2],
+[24,'闯红灯','2013-08-09',16],
+[24,'违章停车','2013-08-09',0],
+[25,'左转车道直行','2013-08-09',0],
+[25,'直行车道左转','2013-08-09',5],
+[25,'闯红灯','2013-08-09',7],
+[25,'违章停车','2013-08-09',1],
+[26,'左转车道直行','2013-08-09',4],
+[26,'直行车道左转','2013-08-09',6],
+[26,'闯红灯','2013-08-09',3],
+[26,'违章停车','2013-08-09',8],
+[27,'左转车道直行','2013-08-09',2],
+[27,'直行车道左转','2013-08-09',3],
+[27,'闯红灯','2013-08-09',12],
+[27,'违章停车','2013-08-09',0],
+[28,'左转车道直行','2013-08-09',4],
+[28,'直行车道左转','2013-08-09',6],
+[28,'闯红灯','2013-08-09',6],
+[28,'违章停车','2013-08-09',10],
+[29,'左转车道直行','2013-08-09',11],
+[29,'直行车道左转','2013-08-09',0],
+[29,'闯红灯','2013-08-09',3],
+[29,'违章停车','2013-08-09',6],
+[30,'左转车道直行','2013-08-09',19],
+[30,'直行车道左转','2013-08-09',4],
+[30,'闯红灯','2013-08-09',17],
+[30,'违章停车','2013-08-09',13],
+[31,'左转车道直行','2013-08-09',20],
+[31,'直行车道左转','2013-08-09',12],
+[31,'闯红灯','2013-08-09',12],
+[31,'违章停车','2013-08-09',10],
+[32,'左转车道直行','2013-08-09',12],
+[32,'直行车道左转','2013-08-09',22],
+[32,'闯红灯','2013-08-09',24],
+[32,'违章停车','2013-08-09',7],
+[33,'左转车道直行','2013-08-09',18],
+[33,'直行车道左转','2013-08-09',19],
+[33,'闯红灯','2013-08-09',1],
+[33,'违章停车','2013-08-09',10],
+[34,'左转车道直行','2013-08-09',7],
+[34,'直行车道左转','2013-08-09',20],
+[34,'闯红灯','2013-08-09',19],
+[34,'违章停车','2013-08-09',22],
+[35,'左转车道直行','2013-08-09',21],
+[35,'直行车道左转','2013-08-09',16],
+[35,'闯红灯','2013-08-09',9],
+[35,'违章停车','2013-08-09',15],
+[36,'左转车道直行','2013-08-09',5],
+[36,'直行车道左转','2013-08-09',22],
+[36,'闯红灯','2013-08-09',6],
+[36,'违章停车','2013-08-09',18],
+[37,'左转车道直行','2013-08-09',18],
+[37,'直行车道左转','2013-08-09',23],
+[37,'闯红灯','2013-08-09',17],
+[37,'违章停车','2013-08-09',7],
+[38,'左转车道直行','2013-08-09',20],
+[38,'直行车道左转','2013-08-09',12],
+[38,'闯红灯','2013-08-09',7],
+[38,'违章停车','2013-08-09',22],
+[39,'左转车道直行','2013-08-09',2],
+[39,'直行车道左转','2013-08-09',17],
+[39,'闯红灯','2013-08-09',22],
+[39,'违章停车','2013-08-09',2],
+[40,'左转车道直行','2013-08-09',9],
+[40,'直行车道左转','2013-08-09',0],
+[40,'闯红灯','2013-08-09',21],
+[40,'违章停车','2013-08-09',21],
+[41,'左转车道直行','2013-08-09',14],
+[41,'直行车道左转','2013-08-09',15],
+[41,'闯红灯','2013-08-09',19],
+[41,'违章停车','2013-08-09',21],
+[42,'左转车道直行','2013-08-09',0],
+[42,'直行车道左转','2013-08-09',12],
+[42,'闯红灯','2013-08-09',24],
+[42,'违章停车','2013-08-09',5],
+[43,'左转车道直行','2013-08-09',2],
+[43,'直行车道左转','2013-08-09',13],
+[43,'闯红灯','2013-08-09',24],
+[43,'违章停车','2013-08-09',11],
+[44,'左转车道直行','2013-08-09',4],
+[44,'直行车道左转','2013-08-09',0],
+[44,'闯红灯','2013-08-09',12],
+[44,'违章停车','2013-08-09',16],
+[45,'左转车道直行','2013-08-09',15],
+[45,'直行车道左转','2013-08-09',6],
+[45,'闯红灯','2013-08-09',11],
+[45,'违章停车','2013-08-09',1],
+[46,'左转车道直行','2013-08-09',7],
+[46,'直行车道左转','2013-08-09',12],
+[46,'闯红灯','2013-08-09',6],
+[46,'违章停车','2013-08-09',21],
+[47,'左转车道直行','2013-08-09',6],
+[47,'直行车道左转','2013-08-09',13],
+[47,'闯红灯','2013-08-09',14],
+[47,'违章停车','2013-08-09',20],
+[48,'左转车道直行','2013-08-09',13],
+[48,'直行车道左转','2013-08-09',3],
+[48,'闯红灯','2013-08-09',14],
+[48,'违章停车','2013-08-09',16],
+[49,'左转车道直行','2013-08-09',10],
+[49,'直行车道左转','2013-08-09',19],
+[49,'闯红灯','2013-08-09',16],
+[49,'违章停车','2013-08-09',13],
+[50,'左转车道直行','2013-08-09',9],
+[50,'直行车道左转','2013-08-09',7],
+[50,'闯红灯','2013-08-09',15],
+[50,'违章停车','2013-08-09',11],
+[51,'左转车道直行','2013-08-09',10],
+[51,'直行车道左转','2013-08-09',16],
+[51,'闯红灯','2013-08-09',15],
+[51,'违章停车','2013-08-09',0],
+[52,'左转车道直行','2013-08-09',6],
+[52,'直行车道左转','2013-08-09',1],
+[52,'闯红灯','2013-08-09',20],
+[52,'违章停车','2013-08-09',14],
+[53,'左转车道直行','2013-08-09',2],
+[53,'直行车道左转','2013-08-09',3],
+[53,'闯红灯','2013-08-09',17],
+[53,'违章停车','2013-08-09',22],
+[54,'左转车道直行','2013-08-09',2],
+[54,'直行车道左转','2013-08-09',9],
+[54,'闯红灯','2013-08-09',11],
+[54,'违章停车','2013-08-09',14],
+[55,'左转车道直行','2013-08-09',20],
+[55,'直行车道左转','2013-08-09',9],
+[55,'闯红灯','2013-08-09',18],
+[55,'违章停车','2013-08-09',9],
+[56,'左转车道直行','2013-08-09',4],
+[56,'直行车道左转','2013-08-09',18],
+[56,'闯红灯','2013-08-09',23],
+[56,'违章停车','2013-08-09',7],
+[57,'左转车道直行','2013-08-09',1],
+[57,'直行车道左转','2013-08-09',2],
+[57,'闯红灯','2013-08-09',15],
+[57,'违章停车','2013-08-09',0],
+[58,'左转车道直行','2013-08-09',7],
+[58,'直行车道左转','2013-08-09',4],
+[58,'闯红灯','2013-08-09',8],
+[58,'违章停车','2013-08-09',8],
+[59,'左转车道直行','2013-08-09',20],
+[59,'直行车道左转','2013-08-09',1],
+[59,'闯红灯','2013-08-09',0],
+[59,'违章停车','2013-08-09',20],
+[60,'左转车道直行','2013-08-09',2],
+[60,'直行车道左转','2013-08-09',6],
+[60,'闯红灯','2013-08-09',7],
+[60,'违章停车','2013-08-09',21],
+[61,'左转车道直行','2013-08-09',9],
+[61,'直行车道左转','2013-08-09',0],
+[61,'闯红灯','2013-08-09',15],
+[61,'违章停车','2013-08-09',5],
+[62,'左转车道直行','2013-08-09',3],
+[62,'直行车道左转','2013-08-09',9],
+[62,'闯红灯','2013-08-09',18],
+[62,'违章停车','2013-08-09',14],
+[63,'左转车道直行','2013-08-09',12],
+[63,'直行车道左转','2013-08-09',9],
+[63,'闯红灯','2013-08-09',19],
+[63,'违章停车','2013-08-09',1],
+[64,'左转车道直行','2013-08-09',7],
+[64,'直行车道左转','2013-08-09',12],
+[64,'闯红灯','2013-08-09',21],
+[64,'违章停车','2013-08-09',6],
+[65,'左转车道直行','2013-08-09',8],
+[65,'直行车道左转','2013-08-09',17],
+[65,'闯红灯','2013-08-09',14],
+[65,'违章停车','2013-08-09',7],
+[66,'左转车道直行','2013-08-09',8],
+[66,'直行车道左转','2013-08-09',14],
+[66,'闯红灯','2013-08-09',19],
+[66,'违章停车','2013-08-09',16],
+[67,'左转车道直行','2013-08-09',3],
+[67,'直行车道左转','2013-08-09',9],
+[67,'闯红灯','2013-08-09',19],
+[67,'违章停车','2013-08-09',6],
+[68,'左转车道直行','2013-08-09',0],
+[68,'直行车道左转','2013-08-09',1],
+[68,'闯红灯','2013-08-09',24],
+[68,'违章停车','2013-08-09',2],
+[69,'左转车道直行','2013-08-09',3],
+[69,'直行车道左转','2013-08-09',6],
+[69,'闯红灯','2013-08-09',24],
+[69,'违章停车','2013-08-09',4],
+[70,'左转车道直行','2013-08-09',6],
+[70,'直行车道左转','2013-08-09',7],
+[70,'闯红灯','2013-08-09',11],
+[70,'违章停车','2013-08-09',2],
+[71,'左转车道直行','2013-08-09',2],
+[71,'直行车道左转','2013-08-09',3],
+[71,'闯红灯','2013-08-09',20],
+[71,'违章停车','2013-08-09',3]
+]
+//读取数据
+function datestruct(name,lng,lat)
+{
+    this.name=name;
+    this.lng=lng;
+    this.lat=lat;
+    this.num=[0,0,0,0];
+    this.add = function (id,num){
+        switch(id%4){
+            case 0:this.num[0]+=num;break;
+            case 1:this.num[1]+=num;break;
+            case 2:this.num[2]+=num;break;
+            case 3:this.num[3]+=num;break;
+        }
+    }
+}
+function makeData(){
+    var data = new Array();
+    for(i=0;i<points.length;i++)
+    {
+        var one=new datestruct(points[i][0],points[i][1],points[i][2]);
+        data.push(one);
+    }
+    var len=informations.length;
+    document.getElementById("briefInfo").innerHTML="共"+len+"条记录 共"+Math.ceil(len/10)+"页" ;
+    var x=document.getElementById("tableList");
+    for(i=0;i<len;i++)
+    {
+        if(i<10){
+            var y=x.insertRow(i+1);
+            y.insertCell(0).innerHTML=points[Math.floor(informations[i][0]/4)][0];
+            y.insertCell(1).innerHTML=monitor[informations[i][0]][1];
+            y.insertCell(2).innerHTML=monitor[informations[i][0]][2];
+            y.insertCell(3).innerHTML=informations[i][2];
+            y.insertCell(4).innerHTML=informations[i][1];
+            y.insertCell(5).innerHTML=informations[i][3];
+        }
+
+        data[Math.floor(informations[i][0]/4)].add(informations[i][0],informations[i][3]);
+    }
+    return data;
+}
+var aData=makeData();
+
+   
+
+
+(function(){
+
+    var map; //是否可以换成全局的window.map 调用其他的界面不用重新生成地图
+    var mapInit = function(divName,city){
+        try{
+            var newmap = new BMap.Map(divName);            // 创建Map实例
+            newmap.centerAndZoom(city)            // 初始化地图,设置中心点坐标和地图级别。
+            newmap.addControl(new BMap.NavigationControl());               // 添加平移缩放控件
+            newmap.addControl(new BMap.ScaleControl());                    // 添加比例尺控件
+            newmap.addControl(new BMap.OverviewMapControl());              //添加缩略地图控件
+            newmap.enableScrollWheelZoom();  //启用滚轮放大缩小
+            map = newmap; //全局变量
+        }catch(e){
+            var img = new Image();
+            img.src="../images/pics/404.jpg";
+            img.onload = function(){
+                document.getElementById("BaiduMap").appendChild(this);
+            }
+        }
+    }
+    function InfoInit(){
+        function Info(){
+            this.defaultAnchor = BMAP_ANCHOR_BOTTOM_RIGHT;
+            this.defaultOffset = new BMap.Size(11, 11);
+        }
+        Info.prototype = new BMap.Control();
+        Info.prototype.initialize = function(map){
+            var div = document.createElement("div");
+            div.style.width="5%";
+            div.style.height=div.style.width*4.04;
+            var img = new Image();
+            img.src="../images/pics/TipList.png";
+
+            div.appendChild(img);
+            map.getContainer().appendChild(div);
+            return div;
+        }
+        map.addControl(new Info());
+    }
+    function preImage(url,callback){  
+        var img = new Image(); 
+        img.src = url;  
+        if (img.complete) {  
+            callback.call(img);  
+            return; 
+        }  
+        img.onload = function () { 
+            callback.call(img);  
+        };  
+    }
+    function drawPoints(data)//data 应当为由对象组成的数组
+    {
+        map.clearOverlays();
+        var ap=new Array();
+        var pps=new Array();
+        for(i=0;i<data.length;i++)
+        {
+            var sum=data[i].num[0]+data[i].num[1]+data[i].num[2]+data[i].num[3];
+            var icon,
+                pp=[0,0,0,0];
+            if(sum>190)icon=new BMap.Icon('../images/pics/MAP_1.png',new BMap.Size(35, 35));
+            else if(sum>170)icon=new BMap.Icon('../images/pics/MAP_2.png',new BMap.Size(35, 35));
+            else if(sum>150)icon=new BMap.Icon('../images/pics/MAP_3.png',new BMap.Size(35, 35));
+            else if(sum>110)icon=new BMap.Icon('../images/pics/MAP_4.png',new BMap.Size(35, 35));
+            else if(sum>80)icon=new BMap.Icon('../images/pics/MAP_5.png',new BMap.Size(35, 35));
+            else if(sum>50)icon=new BMap.Icon('../images/pics/MAP_6.png',new BMap.Size(35, 35));
+            else icon=new BMap.Icon('../images/pics/MAP_7.png',new BMap.Size(35, 35));
+            for(j=0;j<4;j++)
+                pp[j]=data[i].num[j]/sum;
+            var point = new BMap.Point(data[i].lng,data[i].lat);
+            ap.push(point);
+            pps.push(pp);
+            var marker = new BMap.Marker(point);
+            marker.setIcon(icon);
+            map.addOverlay(marker);
+
+            var sContent ="<div id='canvastable' style='background-image:url(../images/pics/bg.png);width:300px;height:180px;'><canvas id='eng'>您的浏览器不支持html5，无法显示</canvas></div>";
+            var infoBox = new BMapLib.InfoBox(map,sContent,{
+                boxClass:"InfoBox",
+                enableAutoPan: true,
+                }
+            );
+
+            function drawCircle(Proportion){
+                var x=215,y=80,
+                    color = ["#FFC50B","#7B97B7","#DC4C49","#7BD6C4"];
+                var canvas = document.getElementById("eng");   
+                var ctx = canvas.getContext("2d");
+                preImage("../images/pics/TT.png",function(){  
+                    ctx.drawImage(this,30,35,107,95);  
+                });  
+
+                var startPoint = Math.PI*1.5;
+                for(var i=0;i<Proportion.length;i++){ 
+                    ctx.fillStyle = color[i];   
+                    ctx.strokeStyle = "#FFFFFF"; 
+                    ctx.beginPath();   
+                    ctx.moveTo(x,y);   
+                    ctx.arc(x,y,60,startPoint,startPoint-Math.PI*2*Proportion[i],true);   
+                    ctx.fill();   
+                    ctx.stroke();   
+                    startPoint -= Math.PI*2*Proportion[i];
+                }   
+            } 
+
+            marker.addEventListener("click", function(){
+                infoBox.open(this);
+                for(k=0;k<ap.length;k++)
+                {
+                    if(this.getPosition().equals(ap[k])){
+                        drawCircle(pps[k]);
+                        break;
+                    }
+                }
+            });
+        }
+        map.setViewport(ap);
+    }
+    //初始化
+    mapInit("BaiduMap","上海");
+    InfoInit();
+    
+    function draw(){
+        drawPoints(aData);
+    }
+    document.getElementById("showPoints").addEventListener("click",draw,false);
+
+})();
+
+</script>
