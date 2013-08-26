@@ -206,7 +206,7 @@ Deskpanel = function(me){
 	
 	var desktopWrapper = "<div id='desktopWrapper'></div>";//最外层容器
 	var desktopsContainer = "<div id='desktopsContainer' class='desktopsContainer'	>";
-	var desktopContainer = "<div class='desktopContainer' index='{index}' >";
+	var desktopContainer = "<div class='desktopContainer' index='{index}' ><div class='loginArea'> <div style='margin-top:10px;'>欢迎您： Admin </div><div class='logoutImg'><a href='#' style='color: #FFFFFF;font-size:14px;'>注销</a></div></div>";
 	var desktopAppListener = "<div class='appListContainer' customacceptdrop='{index}' index='{index}' _olddisplay='block' >";//内部监听容器
 	var defaultIndex = 0,
 		defaultNum = DATA.menu.length,
@@ -972,7 +972,7 @@ BottomBar = function(me){
 	var _PreBox = "<div id='taskPreBox' class='taskPreBox' _olddisplay='' style='display: none;'><a id='taskPre' class='taskPre' hidefocus='true' href='#'></a></div>";
 	var _taskContainner = "<div id='taskContainer' class='taskContainer' style=''></div>";
 	var bottonbarbg = "<div class='bottomBarBg'></div>";
-	var bottomBarBgTask = "<div class='bottomBarBgTask'><img src='images/complogo.png'style='position:absolute;padding:7px 0 0 10px;'></img></div>";
+	var bottomBarBgTask = "<div class='bottomBarBgTask'><img src='images/complogo.png'style='position:absolute;padding:14px 0 0 0px;height:50px;width:250px;'></img></div>";
 	
 	return me  = {
 		init:function(){

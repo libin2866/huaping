@@ -5,8 +5,10 @@
 }
 
 .outer{
-	left:40%; 
-	top:32%; 
+	left:50%; 
+	top:50%; 
+	margin-left: -175px;
+	margin-top: -125px;
 	/*margin-left:auto;
 	margin-right:auto;*/
 	/*text-align:center;*/
@@ -97,5 +99,5 @@
 
 }
 .textmargin{
-	margin-left: 60px;
+	margin-left: 50px;
 }

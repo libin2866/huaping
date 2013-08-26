@@ -3659,3 +3659,24 @@ a.window_next:hover {
     text-indent: 10px;
     vertical-align: middle;
 }
+
+.loginArea{
+    float:right;
+    color:#FFFFFF;
+    left:82%;
+    margin-top: 0px;
+    font-size: 14px;
+}
+
+.logoutImg{
+    position: absolute;
+    margin-left: 110px;
+    margin-top: -30px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 45px;
+    width: 70px;
+    height: 45px;
+    background:rgba(255,255,255,0.6);
+   
+}

@@ -16,7 +16,7 @@ function css(cs,num)
         document.getElementById("listmenu"+i).className="";
         document.getElementById('part'+i).style.display = "none";
     }
-    if(num==2){
+    if(num==3||num==4){
          document.getElementById('paging').style.display = "none";
     }else{
          document.getElementById('paging').style.display = "";
@@ -35,33 +35,67 @@ function css(cs,num)
                 <!--<li><a rel="external nofollow" href="http://twitter.com/insic">Twitter @insic</a></li>-->
 
             </ul>
+<div id="part1">
+    <div> 
+     <p class="contitle">用户组名称: </p>
+    <input type="text" class="inputtext" name="userGroup">
+    <input name="submit" type="image" class="btnbg" src="../css/images/checkout.gif" /> 
+    <input name="add" type="image" class="btnbg2" src="../css/images/add.gif"/>
+    </div><br />
+    <div class="fortable">
+    <table  style="width:100%;">
+        <tr bgcolor="#000" class="tabletitle" border="0px">
+             <td colspan="5" style="text-align:left">用户组列表</td>
+        </tr>
+        <tr border="1px">
+            <td style="width:25%">用户组名称</td><td style="width:15%">用户组级别</td><td style="width:35%">备注</td> <td style="width:25%">操作</td>
+        </tr>
+        <tr  bgcolor="#b5b5b5">
+            <td>操作员</td><td>支队</td><td> 万山交警支队</td><td>编辑 删除</td>
+        </tr>
+        <tr  bgcolor="#b5b5b5">
+            <td>操作员</td><td>支队</td><td> 千山交警支线</td><td>编辑 删除</td>
+        </tr>
+    </table>
 
-<!--<div> 
+    </div>
 
- <p class="contitle">帐号: </p>
-<input type="text" class="inputtext" name="userGroup">
-<input name="submit" type="image" class="btnbg" src="../css/images/checkout.gif" /> 
-<input name="add" type="image" class="btnbg2" src="../css/images/add.gif"/>
-</div><br />
-<div class="fortable">
-<table  style="width:100%;">
-    <tr bgcolor="#000" class="tabletitle" border="0px">
-         <td colspan="5" style="text-align:left">辖区列表</td>
-    </tr>
-    <tr border="1px">
-        <td style="width:20%">辖区代码</td><td style="width:15%">辖区级别</td><td style="width:35%">辖区名称</td> <td style="width:20%">决字头</td><td style="width:15%">操作</td>
-    </tr>
-    <tr  bgcolor="#b5b5b5">
-        <td>111111111111</td><td>支队</td><td> 万山交警支队</td><td> </td><td>编辑 删除</td>
-    </tr>
-    <tr  bgcolor="#b5b5b5">
-        <td>111111111112</td><td>支队</td><td> 千山交警支线</td><td> </td><td>编辑 删除</td>
-    </tr>
-</table>
+
+
+<!--<img src="pic/user_edit.png" style="float:left;width:820px;height:500px;"/>-->
+
 
 </div>
-<div class="paging">
+<div id="part2" style="display:none;">
+    <div> 
+     <p class="contitle">帐号: </p>
+    <input type="text" class="inputtext" name="userGroup">
+    <input name="submit" type="image" class="btnbg" src="../css/images/checkout.gif" /> 
+    <input name="add" type="image" class="btnbg2" src="../css/images/add.gif"/>
+    </div><br />
+    <div class="fortable">
+    <table  style="width:100%;">
+        <tr bgcolor="#000" class="tabletitle" border="0px">
+             <td colspan="5" style="text-align:left">用户列表</td>
+        </tr>
+        <tr border="1px">
+            <td style="width:15%">帐号</td><td style="width:15%">用户姓名</td><td style="width:30%">身份证号</td><td style="width:20%">归属辖区</td> <td style="width:15%">操作</td>
+        </tr>
+        <tr  bgcolor="#b5b5b5">
+            <td>Admin</td><td>操作员</td><td></td><td> 支队</td><td>编辑 删除</td>
+        </tr>
+        <tr  bgcolor="#b5b5b5">
+            <td>Admin2</td><td>操作员2</td><td></td><td> 支队</td><td>编辑 删除</td>
+        </tr>
+    </table>
 
+    </div>
+
+</div>
+<div id="part3" style="display:none;"></div>
+<div id="part4" style="display:none;"></div>
+
+<div class="paging" id="paging">
 <table align="center" >
     <tr>
    <td> <a href="#">首页</a></td>
@@ -75,18 +109,9 @@ function css(cs,num)
      <td> <a href="#">尾页</a></td>
      <td></td>
      <td> <input name="gotopage" style="margin-left:30px;width:40px"type="text"/> <a href="#">跳转</a></td>
-
-
 </tr>
 </table>
 </div>
--->
-<div id="part1">
-<img src="pic/user_edit.png" style="float:left;width:820px;height:500px;"/></div>
-<div id="part2" style="display:none;"></div>
-<div id="part3" style="display:none;"></div>
-<div id="part4" style="display:none;"></div>
-
 
 </body>
 </html>
