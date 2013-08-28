@@ -4,8 +4,37 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link type="text/css" rel="stylesheet" media="all" href="../css/styles.css" />
 <script type="text/javascript" src="../js/picker.js"></script>
-<script>
-   
+<link type="text/css" href="../css/jquery-ui-1.8.24.custom.css" rel="stylesheet" />
+<link type="text/css" href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-1.8.24.custom.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-timepicker-addon.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-timepicker-zh-CN.js"></script>
+ <script type="text/javascript">
+    $(function () {
+        $("#ui_timepicker1").datetimepicker({
+           // showOn: "button",
+           //buttonImage: "../css/images/icon_calendar.png",
+            //buttonImageOnly: true,
+            showSecond: true,
+            timeFormat: 'hh:mm:ss',
+            stepHour: 1,
+            stepMinute: 1,
+            stepSecond: 1
+        })
+    })
+        $(function () {
+        $("#ui_timepicker2").datetimepicker({
+           // showOn: "button",
+           //buttonImage: "../css/images/icon_calendar.png",
+            //buttonImageOnly: true,
+            showSecond: true,
+            timeFormat: 'hh:mm:ss',
+            stepHour: 1,
+            stepMinute: 1,
+            stepSecond: 1
+        })
+    })
 function css(cs,num)
 {
     var total=7;
@@ -39,13 +68,18 @@ function css(cs,num)
 <div id="part1">
     
     <div class="filter_area"> 
-        <table  style="width:100%;background: #ffffff;border: 1px solid #5b5b5b;" cellspacing="0">
+        <table  style="width:100%;background: #ffffff;border: 1px solid #5b5b5b;height:210px;" cellspacing="0">
             
             <tr bgcolor="#000" class="tabletitle" border="0px">
                  <td colspan="4" style="text-align:left">综合查询</td>
             </tr>
             <tr>
-                <td style="width:15%">违法时间</td><td style="width:35%"></td><td style="width:15%">至</td><td style="width:35%"></td>
+                <td style="width:15%">违法时间</td><td style="width:35%">
+                <input type="text" name="datetime1" id="ui_timepicker1" class="timepicker" value="">
+              </td><td style="width:15%">至</td><td style="width:35%">
+              <input type="text" name="datetime2" id="ui_timepicker2" class="timepicker" value="">
+
+            </td>
             </tr>
             <tr>
                 <td style="width:15%">路&nbsp;&nbsp;&nbsp;&nbsp;口</td>
@@ -123,7 +157,7 @@ function css(cs,num)
         <input type="text" class="inputtext" name="userGroup">
        -->
     </div>
-    <div class="fortable" style="margin-top:10px;">
+    <div class="fortable" style="margin-top:15px;">
         <table  style="width:100%;" cellspacing="0">
             <tr bgcolor="#000" class="tabletitle" border="0px">
                  <td colspan="8" style="text-align:left">查询结果</td>

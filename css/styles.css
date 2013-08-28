@@ -267,16 +267,16 @@ ul.vertical[rel=ver1] li a{
  .contitle{
   float: left;
   margin: 18px 10px 0px 45px;
-  
+
   font-size: 14px;
   font-weight: bold;
  }
  .fortable{
-  margin-top: 40px;
+  margin-top: 10px;
  margin-left: 175px;
  margin-right: 15px;
   background: #ffffff;
-  border: 1px solid #5b5b5b;
+  border: 2px solid #5b5b5b;
   height: 400px;
 }
 
@@ -290,8 +290,18 @@ ul.vertical[rel=ver1] li a{
   text-align: center;
 
 }
+
 .filter_area tr td{
-  height: 35px;
+  height: 37px;
+}
+.small_filter_area{
+  float：left;
+ margin-left: 175px;
+ margin-right: 15px;
+  background: #ffffff;
+  border: 2px solid #5b5b5b;/**/
+  height: 50px;
+  text-align: center;
 
 }
 
@@ -336,7 +346,7 @@ padding: 2px;
 /*********************************/
 .xmkc {
   height: 28px;
-  width: 91%;
+  /*width: 91%;*/
   position: relative;
   border: 1px solid #CCC;
 }
@@ -391,18 +401,7 @@ padding: 2px;
   font-size: 14px;
   color: #FF6600;
   background-color: #FFFFFF;
-  border-top-width: 1px;
-  border-right-width: 1px;
-  border-bottom-width: 1px;
-  border-left-width: 1px;
-  border-top-style: solid;
-  border-right-style: solid;
-  border-bottom-style: solid;
-  border-left-style: solid;
-  border-top-color: #5b5b5b;/*096A89*/
-  border-right-color: #b5b5b5;/*D3ECFF*/
-  border-bottom-color: #b5b5b5;/*D3ECFF*/
-  border-left-color: #5b5b5b;/*096A89*/
+  border: 1px solid #5b5b5b;
   padding-right: 3px;
   padding-left: 3px;
   text-align: left;
@@ -410,6 +409,21 @@ padding: 2px;
   line-height: 20px;
   height: 30px;
   background: url(./images/Dropdown.png) no-repeat right;
+}
+.timepicker{
+  float:left;
+  font-size: 14px;
+  color: #FF6600;
+  background-color: #FFFFFF;
+  border: 1px solid #5b5b5b;
+  text-align: left;
+  width: 90%;
+  padding-top: 5px;
+  padding-right: 3px;
+  padding-left: 3px;
+  line-height: 20px;
+  height: 29px;
+  background: url(./images/icon_calendar.png) no-repeat right;
 }
 
 /***********Baidu Map**************/

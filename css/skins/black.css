@@ -12,7 +12,7 @@
 
 
 .aui_outer {
-	text-align: left;
+	text-align: center;
 }
 
 table.aui_border,table.aui_dialog {
@@ -262,6 +262,8 @@ button.aui_state_highlight:active {
 	padding: 0 25px 0 0;
 	_padding: 0;
 	text-indent: 5px;
+	vertical-align: middle;
+	font-size: 16px;
 	color: #FFF;
 	font-weight: 700;
 	text-shadow: -1px -1px 0 rgba(0, 0, 0, .7);
