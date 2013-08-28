@@ -59,6 +59,7 @@
 	/*position: absolute;
   	margin: 0px 0px 0px 6px;
   	margin-left: 50px;*/
+  	margin-left: 5px;
   	width: 180px;
   	height: 30px;
   	color: #ffffff;
@@ -72,8 +73,9 @@
 .pwdinput{
 	/*position: absolute;
   	margin: 0px 0px 0px 5px;
-  	margin-left: 50px;
-  	margin-top: -10px;*/ 
+  	
+  	margin-top: -10px;*/
+  	margin-left: 5px;
   	width: 180px;
   	height: 30px;
   	color: #ffffff;
@@ -89,7 +91,7 @@
  .loginbtn{
   /*position: absolute;
   margin: 10px 15px 10px 80px;*/
-  margin-left: 55px;
+  margin-left: 60px;
   width:93px;
   height:30px;  
   background: no-repeat top right;
