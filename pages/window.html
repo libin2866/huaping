@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<!-- meta data -->
+<meta http-equiv="Content-Language" content="zh-cn" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="站长,网页特效,js特效,广告代码,zzjs,zzjs.net,sky,www.zzjs.net,站长特效 网" />
+<meta name="description" content="www.zzjs.net,站长特效网，站长必备js特效及广告代码。大量高质量js特效，提供高质量广告代码下载,尽在站长特效网" />
+<!-- site title -->
+<title>点击弹出窗口层并且背景变暗渐变，sky整理收集，站长特效欢迎您。</title>
+<style>
+body {font-size:12px;background:#9EC7E7}
+img {border:0px}
+#msgDiv {
+    z-index:10001;
+    width:500px;
+    height:400px;
+    background:white;
+    border:#336699 1px solid;
+    position:absolute;
+    left:50%;
+    top:20%;
+    font-size:12px;
+    margin-left:-225px;
+    display: none;
+}
+#bgDiv {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right:0px;
+    background-color: #777;
+    filter:progid:DXImageTransform.Microsoft.Alpha(style=3,opacity=25,finishOpacity=75)
+    opacity: 0.6;
+}
+</style>
+<script type="text/javascript">
+function showDetail() {
+//背景
+  var bgObj=document.getElementById("bgDiv");
+  bgObj.style.width = document.body.offsetWidth + "px";
+  bgObj.style.height = screen.height + "px";
+//定义窗口
+  var msgObj=document.getElementById("msgDiv");
+  msgObj.style.marginTop = -75 +  document.documentElement.scrollTop + "px";
+//关闭
+  document.getElementById("msgShut").onclick = function(){
+  bgObj.style.display = msgObj.style.display = "none";
+  }
+  msgObj.style.display = bgObj.style.display = "block";
+  msgDetail.innerHTML="<p align=center>小窗口里的内容
+<p align=center><A href=http://www.zzjs.net><FONT color=#0000ff>站长特效网</FONT>打造国内最帅的网页特效站</A>
+"
+}//欢迎来到站长特效网，我们的网址是www.zzjs.net，很好记，zz站长，js就是js特效，本站收集大量高质量js代码，还有许多广告代码下载。
+</script>
+</head>
+<body>
+<a href="<#ZC_BLOG_HOST#>">站长特效网</a>,站长必备的高质量网页特效和广告代码。zzjs.net，站长js特效。<hr>
+<!--欢迎来到站长特效网，我们网站收集大量高质量js特效，提供许多广告代码下载，网址：www.zzjs.net，zzjs@msn.com,用.net打造靓站-->
+<div id="msgDiv">
+	<div id="msgShut">
+		关闭</div>
+	<div id="msgDetail">
+	</div>
+</div>
+<div id="bgDiv">
+</div>
+　
+
+<a href="#" onClick="showDetail()">点击我试试看</a>
+
+　
+
+　
+
+　
+
+　
+
+国内最帅的网页特效站 <a href="<#ZC_BLOG_HOST#>">站长特效网</a>
+
+</body>
+</html>
