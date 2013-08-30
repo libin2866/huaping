@@ -116,7 +116,7 @@ $(function(){
        <br />
         <div class="small_filter_area">用户组设置 <img id="tablebtn" src="../images/pics/Opend.png"  style="float:right;height:35px" onclick="openClose('searchTable','tablebtn')"/> </div>  
         <div id="searchTable" style="display:block;margin-right: 15px;">
-             <table  style="width:100%;background: #ffffff;border: 2px solid #5b5b5b; " cellspacing="0"> 
+             <table  class="generalTable" cellspacing="0"> 
              <tr> 
                 <td style="height:50px;"> <p class="contitle">用户组名称:</p>
                     <input type="text" class="inputtext" style="margin-top:9px;" name="userGroup">
@@ -159,7 +159,7 @@ $(function(){
     <br />
     <div class="small_filter_area">用户编辑： <img id="tablebtn2" src="../images/pics/Opend.png"  style="float:right;height:35px" onclick="openClose('searchTable2','tablebtn2')"/> </div>  
         <div id="searchTable2" style="display:block;margin-right: 15px;">
-             <table  style="width:100%;background: #ffffff;border: 2px solid #5b5b5b; " cellspacing="0"> 
+             <table  class="generalTable" cellspacing="0"> 
              <tr> 
                 <td style="width:9%"> <p class="contitle2">帐&nbsp;&nbsp;号</p></td>
                     <td style="width:23%"><input type="text" class="inputtext"  style="width:90%;" name="userGroup"></td>
@@ -205,7 +205,7 @@ $(function(){
             </table>
         </div>
         <br/>
-    <div class="fortable"  id="fortable2" style="height:200px;">
+    <div class="fortable"  id="fortable2" >
         <table  style="width:100%;">
             <tr bgcolor="#000" class="tabletitle" border="0px">
                  <td colspan="5" style="text-align:left;text-indent:1em;">用户列表</td>
@@ -226,10 +226,22 @@ $(function(){
 </div>
 
 
-<div id="part3" style="display:none;"><br/>
+<div id="part3" style="display:none;margin-left:175px;height:85%;"><br/>
+<div class="small_filter_area" >密码修改</div>  
+   <div style="margin-right:15px;height:100%">
+      <table  class="passTable"style="" cellspacing="0"> 
+      <tr><td styel="width:30%"><font color="#ff000;">*</font> &nbsp;帐&nbsp;号</td><td style="width:70%"><input type="text" class="inputtext" ></td></tr>
+      <tr><td styel="width:30%"><font color="#ff000;">*</font> 原密码</td><td style="width:70%"><input type="text" class="inputtext" ></td></tr>
+      <tr><td styel="width:30%"><font color="#ff000;">*</font> 新密码</td><td style="width:70%"><input type="text" class="inputtext" ></td></tr>
+      <tr><td class="light" colspan="2">密码由6-16个字符组成，区分大小写（不能是9位以下的纯数字，不能包含空格）<br/>为了提升您的密码安全性，建议使用英文字母加数字或符号的混合密码</td></tr>
+      <tr><td styel="width:30%"><font color="#ff000;">*</font> 确认密码</td><td style="width:70%"><input type="text" class="inputtext" ></td></tr>
+      <tr><td colspan="2" style="text-align:center;height:50px;">
+       <input name="submit" type="image" class="tablebtn" src="../css/images/checkout.gif" />&nbsp;
+       <input name="add" type="image" class="tablebtn" src="../css/images/add.gif"/>
+      </td></tr>
 
-
-
+      </table>
+  </div>
 </div>
 <div id="part4" style="display:none;"><br/></div>
 
