@@ -47,8 +47,88 @@ function css(cs,num)
         document.getElementById("listmenu"+i).className="";
         document.getElementById('part'+i).style.display = "none";
     }
-   
+       if(num != 1){
+         document.getElementById('paging').style.display = "none";
+       }else{
+        document.getElementById('paging').style.display = "block";
+       }
 }
+
+function openClose(id,ctrlid)
+{
+    var st = document.getElementById(id);
+    var ct = document.getElementById(ctrlid);
+    if(st.style.display=="none"){
+        st.style.display="block";
+        ct.src="../images/pics/Opend.png"
+         //将目标div高度设为body高度减100，此处可做任意运算
+        //document.getElementById("mytable").style.height="80%";
+       // document.getElementById("mytable").style.height="80%";
+    }
+    else{
+        st.style.display="none";
+        ct.src="../images/pics/Closed.png"
+         //$("#fortable").height($("#part1").height()*0.8);
+        //document.getElementById("mytable").style.height="75%";
+    }
+}
+
+
+$(function(){
+    var part1 = $("#part1");
+    var part2 = $("#part2");
+    var i=1;
+    $("#tablebtn").click(function(){
+                    if($("#searchTable").is(":hidden")){
+                        $("#fortable").height($("#part1").height()-24+"px");
+                    }else{
+                        $("#fortable").height($("#part1").height()-234+"px");
+                    }
+    })
+
+       $("#tablebtn2").click(function(){           
+                if($("#searchTable2").is(":hidden")){
+                    $("#fortable2").height($("#part2").height()-34+"px");
+                }else{
+                    $("#fortable2").height($("#part2").height()-138+"px");
+                }
+    })
+
+
+    $(window).resize(function (){
+
+       if(part1.css('visibility')!="hidden"){
+                if($("#searchTable").is(":hidden")){
+                    $("#fortable").height($("#part1").height()-24+"px");
+                }else{
+                    $("#fortable").height($("#part1").height()-234+"px");
+                }
+        }
+         if(part2.css('visibility')!="hidden"){
+                if($("#searchTable2").is(":visible")){
+                    $("#fortable2").height($("#part2").height()-138+"px");
+                }else{
+                    $("#fortable2").height($("#part2").height()-34+"px");
+                }
+        }
+             $("#listmenu2").click(function(){           
+               
+                    $("#fortable2").height($("#part2").height()-138+"px");
+                })
+                
+       /* }
+        if(part2.is(':visible')){
+            if($("#searchTable2").is(":hidden")){
+                 $("#fortable").height($("#part2").height()-34+"px");
+            }else{
+                $("#fortable").height($("#part2").height()-90+"px");
+            }
+
+        }*/
+   
+    })
+
+})
 </script>
 
 </head>
@@ -65,24 +145,25 @@ function css(cs,num)
                 <li><a href="#" onclick=css("clicked",7) id="listmenu7">白名单管理</a></li>
 
             </ul>
-<div id="part1">
-    
-    <div class="filter_area"> 
-        <table  style="width:100%;background: #ffffff;border: 1px solid #5b5b5b;height:210px;" cellspacing="0">
+<div id="part1" style="margin-left:175px;height:85%;bottom:10%;">
+    <br />
+    <div class="small_filter_area">用户组设置 <img id="tablebtn" src="../images/pics/Opend.png"  style="float:right;height:35px" onclick="openClose('searchTable','tablebtn')"/> </div>  
+     <div id="searchTable" style="display:block;margin-right: 15px;">
+        <table  class="generalTable" style="width:100%;background: #ffffff;border: 1px solid #5b5b5b;height:210px;" cellspacing="0">
             
-            <tr bgcolor="#000" class="tabletitle" border="0px">
+           <!-- <tr bgcolor="#000" class="tabletitle" border="0px">
                  <td colspan="4" style="text-align:left">综合查询</td>
-            </tr>
+            </tr>-->
             <tr>
-                <td style="width:15%">违法时间</td><td style="width:35%">
+                <td style="width:15%"><p class="contitle2">违法时间</p></td><td style="width:35%">
                 <input type="text" name="datetime1" id="ui_timepicker1" class="timepicker" value="">
-              </td><td style="width:15%">至</td><td style="width:35%">
+              </td><td style="width:15%"><p class="contitle2" >至</p></td><td style="width:35%">
               <input type="text" name="datetime2" id="ui_timepicker2" class="timepicker" value="">
 
             </td>
             </tr>
             <tr>
-                <td style="width:15%">路&nbsp;&nbsp;&nbsp;&nbsp;口</td>
+                <td style="width:15%"><p class="contitle2">路&nbsp;&nbsp;&nbsp;&nbsp;口</p></td>
                 <td align="left" style="width:35%"> 
                     <div class="xmkc" style="border:0px;"> 
                         <div><input name="class_lk" id="class_lk" readonly="readonly" type="text" class="selectlist" onClick=clicked('lk'); value="请选择路口"></div>
@@ -96,7 +177,7 @@ function css(cs,num)
                         </div>
                     </div>
                 </td>
-                <td style="width:15%">车&nbsp;&nbsp;&nbsp;&nbsp;道</td>
+                <td style="width:15%"><p class="contitle2">车&nbsp;&nbsp;&nbsp;&nbsp;道</p></td>
                 <td align="left" style="width:35%"> 
                      <div class="xmkc" style="border:0px;"> 
                         <div><input name="class" id="class_cd" readonly="readonly" type="text" class="selectlist" onClick=clicked('cd'); value="请选择车道"></div>
@@ -113,7 +194,7 @@ function css(cs,num)
                 </td>
             </tr>
         <tr>
-               <td style="width:15%">行驶方向</td>
+               <td style="width:15%"><p class="contitle2">行驶方向</p></td>
                <td align="left" style="width:35%"> 
                   <div class="xmkc" style="border:0px;"> 
                         <div><input name="class" id="class_fx" readonly="readonly" type="text" class="selectlist" onClick=clicked('fx'); value="请选择行驶方向"></div>
@@ -127,7 +208,7 @@ function css(cs,num)
                         </div>
                     </div>
                </td>
-           <td style="width:15%">车牌号码</td>
+           <td style="width:15%"><p class="contitle2">车牌号码</p></td>
            <td align="left" style="width:35%"> 
                  <div class="xmkc" style="border:0px;"> 
                         <div>
@@ -146,7 +227,7 @@ function css(cs,num)
            </td>
         </tr>
             <tr>
-                 <td style="width:15%">车&nbsp;&nbsp;&nbsp;&nbsp;速  </td><td style="width:35%;text-align:left;"> <input type="text" style="width:30%;height:25px;margin-top:3px;" name="userGroup">&nbsp;至&nbsp;<input type="text" style="width:30%;height:25px;margin-top:3px;" name="userGroup">&nbsp;公里/小时</td><td style="width:15%"> </td>
+                 <td style="width:15%"><p class="contitle2">车&nbsp;&nbsp;&nbsp;&nbsp;速</p>  </td><td style="width:35%;text-align:left;"> <input type="text" style="width:30%;height:25px;margin-top:3px;text-align:center;" name="userGroup">&nbsp;至&nbsp;<input type="text" style="width:30%;height:25px;margin-top:3px;text-align:center;" name="userGroup">&nbsp;公里/小时</td><td style="width:15%"> </td>
 
                  <td style="width:35%">   <input name="submit" type="image" style="margin-top:5px;width:84px;height:32px;" src="../css/images/checkout.gif" /> 
                 <input name="add" type="image" style="margin-top:5px;width:84px;height:32px;" src="../css/images/add.gif"/></td>
@@ -157,8 +238,9 @@ function css(cs,num)
         <input type="text" class="inputtext" name="userGroup">
        -->
     </div>
-    <div class="fortable" style="margin-top:15px;">
-        <table  style="width:100%;" cellspacing="0">
+
+    <div class="fortable"  id="fortable" style="height:80%;">
+     <table id="mytable" style="width:100%;">
             <tr bgcolor="#000" class="tabletitle" border="0px">
                  <td colspan="8" style="text-align:left">查询结果</td>
             </tr>
@@ -185,7 +267,7 @@ function css(cs,num)
 <div id="part6" style="display:none;"></div>
 <div id="part7" style="display:none;"><img src="pic/H7.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:490px;"/></div>
 
-<div class="paging" id="paging">
+<div class="paging" id="paging" >
     <table align="center" >
         <tr>
        <td> <a href="#">首页</a></td>

@@ -283,6 +283,8 @@ ul.vertical[rel=ver1] li a{
   font-size: 14px;
   font-weight: bold;
  }
+
+
  .fortable{
  margin-right: 15px;
   background: #ffffff;
@@ -355,7 +357,7 @@ padding: 2px;
   color: #ffffff;
 }
 
-/*********************************/
+/************Selector*********************/
 .xmkc {
   height: 28px;
   /*width: 91%;*/
@@ -466,6 +468,9 @@ padding: 2px;
   font-size: 18px;
   vertical-align:middle;
 }
+
+
+/*********For Password In User_Managemant****************/
 
 .generalTable, .passTable{
   width:100%;

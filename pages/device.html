@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link type="text/css" rel="stylesheet" media="all" href="../css/styles.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
 <script >
 function css(cs,num)
 {
@@ -22,6 +23,80 @@ function css(cs,num)
          document.getElementById('paging').style.display = "";
     }
 }
+function openClose(id,ctrlid)
+{
+    var st = document.getElementById(id);
+    var ct = document.getElementById(ctrlid);
+    if(st.style.display=="none"){
+        st.style.display="block";
+        ct.src="../images/pics/Opend.png"
+         //将目标div高度设为body高度减100，此处可做任意运算
+        //document.getElementById("mytable").style.height="80%";
+       // document.getElementById("mytable").style.height="80%";
+    }
+    else{
+        st.style.display="none";
+        ct.src="../images/pics/Closed.png"
+         //$("#fortable").height($("#part1").height()*0.8);
+        //document.getElementById("mytable").style.height="75%";
+    }
+}
+
+$(function(){
+    var part1 = $("#part1");
+    var part2 = $("#part2");
+    var i=1;
+    $("#tablebtn").click(function(){
+                    if($("#searchTable").is(":hidden")){
+                        $("#fortable").height($("#part1").height()-34+"px");
+                    }else{
+                        $("#fortable").height($("#part1").height()-90+"px");
+                    }
+    })
+
+       $("#tablebtn2").click(function(){           
+                if($("#searchTable2").is(":hidden")){
+                    $("#fortable2").height($("#part2").height()-34+"px");
+                }else{
+                    $("#fortable2").height($("#part2").height()-138+"px");
+                }
+    })
+
+
+    $(window).resize(function (){
+
+       if(part1.css('visibility')!="hidden"){
+                if($("#searchTable").is(":hidden")){
+                    $("#fortable").height($("#part1").height()-34+"px");
+                }else{
+                    $("#fortable").height($("#part1").height()-90+"px");
+                }
+        }
+         if(part2.css('visibility')!="hidden"){
+                if($("#searchTable2").is(":visible")){
+                    $("#fortable2").height($("#part2").height()-138+"px");
+                }else{
+                    $("#fortable2").height($("#part2").height()-34+"px");
+                }
+        }
+             $("#listmenu2").click(function(){           
+               
+                    $("#fortable2").height($("#part2").height()-138+"px");
+                })
+                
+       /* }
+        if(part2.is(':visible')){
+            if($("#searchTable2").is(":hidden")){
+                 $("#fortable").height($("#part2").height()-34+"px");
+            }else{
+                $("#fortable").height($("#part2").height()-90+"px");
+            }
+
+        }*/
+   
+    })
+
+})
 </script>
 </head>
 
@@ -34,20 +109,29 @@ function css(cs,num)
                 <!--<li><a rel="external nofollow" href="http://twitter.com/insic">Twitter @insic</a></li>-->
 
             </ul>
-<div id="part1">
-    <div> 
-         <p class="contitle">综合查询: </p>
-        <input type="text" class="inputtext" name="userGroup">
-        <input name="submit" type="image" class="btnbg" src="../css/images/checkout.gif" /> 
-        <input name="add" type="image" class="btnbg2" src="../css/images/add.gif"/>
-    </div><br />
-    <div class="fortable">
-        <table  style="width:100%;">
-            <tr bgcolor="#000" class="tabletitle" border="0px">
-                 <td colspan="5" style="text-align:left">辖区列表</td>
-            </tr>
-            <tr border="1px">
-                <td style="width:20%">辖区代码</td><td style="width:15%">辖区级别</td><td style="width:35%">辖区名称</td> <td style="width:20%">决字头</td><td style="width:15%">操作</td>
+
+<div id="part1" style="margin-left:175px;height:85%;bottom:10%;">
+     <br />
+     <div class="small_filter_area">用户组设置 <img id="tablebtn" src="../images/pics/Opend.png"  style="float:right;height:35px" onclick="openClose('searchTable','tablebtn')"/> </div>  
+        <div id="searchTable" style="display:block;margin-right: 15px;">
+            <table  class="generalTable" cellspacing="0"> 
+             <tr> 
+                <td style="height:50px;"><p class="contitle">综合查询: </p>
+                <input type="text" class="inputtext" name="userGroup">
+                <input name="submit" type="image" class="btnbg" src="../css/images/checkout.gif" /> 
+                <input name="add" type="image" class="btnbg2" src="../css/images/add.gif"/>
+                </td>
+             </tr>
+        </table>
+        </div>
+    <br />
+    <div class="fortable"  id="fortable" style="height:80%;">
+    <table id="mytable" style="width:100%;">
+        <tr bgcolor="#000" class="tabletitle" border="0px">
+             <td colspan="5" style="text-align:left;text-indent:1em;">辖区列表</td>
+        </tr>
+        <tr border="1px">
+            <td style="width:20%">辖区代码</td><td style="width:15%">辖区级别</td><td style="width:35%">辖区名称</td> <td style="width:20%">决字头</td><td style="width:15%">操作</td>
             </tr>
             <tr  bgcolor="#b5b5b5">
                 <td>111111111111</td><td>支队</td><td> 万山交警支队</td><td> </td><td>编辑 删除</td>
@@ -55,12 +139,16 @@ function css(cs,num)
             <tr  bgcolor="#b5b5b5">
                 <td>111111111112</td><td>支队</td><td> 千山交警支线</td><td> </td><td>编辑 删除</td>
             </tr>
-      </table>
+    </table>
 
-    </div>
+</div>
 </div>
 
-<div class="paging">
+<!--<div id="part1"><img src="pic/device.png" style="float:left;margin-left:10px;margin-top:5px;width:790px;height:500px;"/></div>-->
+<div id="part2" style="display:none;"></div>
+<div id="part3" style="display:none;"></div>
+
+<div class="paging"  id="paging">
     <table align="center" >
         <tr>
        <td> <a href="#">首页</a></td>
@@ -77,12 +165,5 @@ function css(cs,num)
     </tr>
     </table>
 </div>
-
-<!--<div id="part1"><img src="pic/device.png" style="float:left;margin-left:10px;margin-top:5px;width:790px;height:500px;"/></div>-->
-<div id="part2" style="display:none;"></div>
-<div id="part3" style="display:none;"></div>
-
-
-
 </body>
 </html>
