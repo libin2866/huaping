@@ -4,6 +4,8 @@
 <link type="text/css" rel="stylesheet" media="all" href="../css/styles.css" />
 <script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
 <script type="text/javascript" src="../js/picker.js"></script>
+<script type="text/javascript" src="../js/PopupDiv_v1.0.js" ></script>
+<script type="text/javascript" src="../js/picker.js"></script>
 <script>
 function css(cs,num)
 {
@@ -97,6 +99,35 @@ $(function(){
    
     })
 
+ $("#PopupDivBtn_add").click(function(){
+        $("#PopupDiv_add").PopupDiv({
+            PopupDivId: "PopupDivOut_add",
+            myclass: "myWrap2",
+            title:"添加用户组"
+        });
+    })
+   
+  $("#PopupDivBtn_addclose").click(function(){
+    $("#PopupDiv_add").PopupDiv("close");
+  })
+
+
+
+ $("#PopupDivBtn_35").click(function(){
+        $("#PopupDiv_35").PopupDiv({
+            PopupDivId: "PopupDivOut_35",
+            myclass: "myWrap2",
+            title:"编辑"
+        });
+    })
+   
+  $("#PopupDivBtn_351").click(function(){
+    $("#PopupDiv_35").PopupDiv("close");
+  })
+
+
+
+
 })
 </script>
 </head>
@@ -120,11 +151,43 @@ $(function(){
                 <td style="height:50px;"> <p class="contitle">用户组名称:</p>
                     <input type="text" class="inputtext" style="margin-top:9px;" name="userGroup">
                     <input name="submit" type="image" class="btnbg" src="../css/images/checkout.gif" /> 
-                    <input name="add" type="image" class="btnbg2" src="../css/images/add.gif"/>
+                    <input name="add" type="image" id="PopupDivBtn_add"class="btnbg2"  src="../css/images/add.gif"/>
+                    <div  id="PopupDiv_add"style="display:none;width:650px;height:400px" align="center">
+                         <table style="margin-top:10px;width:95%;">
+                          
+                            <tr><td width="18%"><font color="red">*</font>&nbsp;用户组级别:</td><td width="32%" >
+                              <div style="background:#ffffff;">
+                              <div class="xmkc" style="border:0px;"> 
+                                <div><input name="class_jb" id="class_jb" readonly="readonly" type="text" class="selectlist" onClick=clicked('jb'); value="请选择级别"></div>
+                                <div id="hh_jb" style="display:none" class="classlist">
+                                   <ul>
+                                      <li class="lis"><a href="#" onClick="gets_value('ASP','jb')">ASP</a></li>
+                                      <li class="lis"><a href="#" onClick="gets_value('PHP','jb')">PHP</a></li>
+                                      <li class="lis"><a href="#" onClick="gets_value('JSP','jb')">JSP</a></li>
+                                    </ul>
+                                    <a href="#"><span onclick="hh_jb.style.display='none'" class="close">关闭</span></a>
+                                </div>
+                            </div>
+                          </div>
+                            </td>
+                            <td width="18%"><font color="red">*</font>&nbsp;用户组名称：</td><td width="32%"><input type="text" class="popupInputtext" ></td></tr>
+                            <tr><td width="18%" >&nbsp;&nbsp;备&nbsp;&nbsp;&nbsp;注：</td><td colspan="3"><input type="text" class="popupInputtext" ></td></tr>
+                            <tr><td colspan="4" style="border-bottom:2px solid rgb(100,100,100);height:20px;"></td></tr></table>
+                            <table style="margin-top:10px;width:95%;">
+                              <tr><td> <input type="checkbox">&nbsp;车辆管理</td><td style="border-left:1px solid;"><input type="checkbox">&nbsp;综合查询</td>
+                                <td><input type="checkbox">&nbsp;轨迹查询</td><td><input type="checkbox">&nbsp;频度查询</td><td><input type="checkbox">&nbsp;违法统计</td></tr>
+                                <tr><td> <input type="checkbox">&nbsp;监控点管理</td><td style="border-left:1px solid;"><input type="checkbox">&nbsp;综合查询</td>
+                                <td><input type="checkbox">&nbsp;流量统计</td><td><input type="checkbox">&nbsp;违法统计</td><td><input type="checkbox">&nbsp;监控点编辑</td></tr>
+
+                              <tr><td colspan="5" style="text-align:right;"><input  type="image" class="btnbg" src="../css/images/save.gif" />&nbsp;
+                              <input name="submit" type="image" id="PopupDivBtn_addclose" class="btnbg" src="../css/images/exit.gif" /></td></tr>
+                          </table>
+                   <br/>
                 </td>
              </tr>
             </table>
             </div>
+                     
    
         <br/>
 
@@ -137,12 +200,40 @@ $(function(){
             <td style="width:25%">用户组名称</td><td style="width:15%">用户组级别</td><td style="width:35%">备注</td> <td style="width:25%">操作</td>
         </tr>
         <tr  bgcolor="#b5b5b5">
-            <td>操作员</td><td>支队</td><td> 万山交警支队</td><td>编辑 删除</td>
+            <td>操作员</td><td>支队</td><td> 万山交警支队</td><td align="center"><table width="100%;"><tr><td ><a  href="#" id="PopupDivBtn_35"><div class="mywrapper">编辑</div></a></td>
+            <td><a href="#"><div class="mywrapper" >删除</div></a></td></tr></table></td>
         </tr>
         <tr  bgcolor="#b5b5b5">
-            <td>操作员</td><td>支队</td><td> 千山交警支线</td><td>编辑 删除</td>
+            <td>操作员</td><td>支队</td><td> 千山交警支线</td><td><table width="100%;"><tr><td ><a href="#"><div class="mywrapper">编辑</div></a> </td>
+            <td><a href="#"><div class="mywrapper">删除</div></a></td></tr></table></td>
         </tr>
     </table>
+
+     <div  id="PopupDiv_35"  style="display:none;width:350px" align="center">
+                         <table style="margin-top:10px;width:85%;">
+                          <tr><td width="30%">用户组名称：</td><td width="70%"><input type="text" class="popupInputtext" ></td></tr>
+                            <tr><td width="30%">用户组级别:</td><td width="70%" bgcolor="#fff">
+                              <div class="xmkc" style="border:0px;"> 
+                                <div><input name="class_jb2" id="class_jb2" readonly="readonly" type="text" class="selectlist" onClick=clicked('jb2'); value="请选择级别"></div>
+                                <div id="hh_jb2" style="display:none" class="classlist">
+                                   <ul>
+                                      <li class="lis"><a href="#" onClick="gets_value('ASP','jb2')">ASP</a></li>
+                                      <li class="lis"><a href="#" onClick="gets_value('PHP','jb2')">PHP</a></li>
+                                      <li class="lis"><a href="#" onClick="gets_value('JSP','jb2')">JSP</a></li>
+                                    </ul>
+                                    <a href="#"><span onclick="hh_jb2.style.display='none'" class="close">关闭</span></a>
+                                </div>
+                            </div>
+                            </td></tr>
+                            <tr><td>备注：</td><td><input type="text" class="popupInputtext" ></td></tr>
+                            <tr><td colspan="2" style="text-align:center;"><input  type="image" class="btnbg" src="../css/images/save.gif" />&nbsp;
+                              <input name="submit" type="image" id="PopupDivBtn_351" class="btnbg" src="../css/images/exit.gif" /></td></tr>
+                          </table>
+                   <br/>
+                </td>
+             </tr>
+            </table>
+            </div>
 
     </div>
 

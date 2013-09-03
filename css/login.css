@@ -35,6 +35,10 @@
       -khtml-opacity: 0.6;  
       opacity: 0.6;*/  
 }
+
+.inner td{
+	height: 35px;
+}
 .logintitle{
 	color:#ffffff;
 	font-size:20px;
