@@ -9,6 +9,50 @@
 		<script type="text/javascript" src="js/jquery-smartMenu-min.js"></script><!---->
 		<script type="text/javascript" src="js/data2.js"></script><!---->
 		<script type="text/javascript" src="js/bsv1.3-core.js"></script>
+		<script type="text/javascript">
+		
+	    //XmlHttpRequest对象  
+	   var xmlHttpRequest;
+	   function createXmlHttpRequest(){  
+	        if(window.ActiveXObject){ //如果是IE浏览器  
+	            return new ActiveXObject("Microsoft.XMLHTTP");  
+	        }else if(window.XMLHttpRequest){ //非IE浏览器  
+	            return new XMLHttpRequest();  
+	        }  
+	    }  
+
+	    function onLogin(){  
+	    	var data = new FormData();
+    		 
+	       data.append("username",document.getElementById("username").value);  
+	       data.append("password",document.getElementById("password").value);  
+	         console.log(data);
+	        var url = "index.html";     
+	        //1.创建XMLHttpRequest组建  
+	        xmlHttpRequest = createXmlHttpRequest();  
+	        //2.设置回调函数  
+	        xmlHttpRequest.onreadystatechange = mycallback;  
+	       //3.初始化XMLHttpRequest组建  
+	        xmlHttpRequest.open("POST",url,false);  
+	        //4.发送请求  
+	        xmlHttpRequest.send(data);    
+	    }     
+	    //回调函数  
+	    function mycallback(){   
+	    	if(xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200){  
+	           var b = xmlHttpRequest.responseText;  
+
+	            if(b == "true"){  
+	                alert("登录成功！");  
+	            }else{  
+	                alert("登录失败！");  
+	            }         
+	        }else{
+	        	console.log(xmlHttpRequest.responseText);
+	        }  
+	    }
+
+		</script>
     </head>
     <body>
     	<div id="zoomWallpaperGrid" class="zoomWallpaperGrid" style="position: absolute; z-index: -10; left: 0pt; top: 0pt; overflow: hidden; height: 381px; width: 1440px;">
@@ -20,11 +64,11 @@
 			<div  class="logintitle"><!--<img src="css/images/logo.png" class="loginlogo" />&nbsp;亚视-->智能交通综合管理平台</div>
 			<div class="inner">
 				<table  style="width:100%;height:100%">
-				<tr><td width="30%" class="textmargin">用户名</td><td width="70%"><input class="usernameinput" type="text" /><td></tr>
-				<tr><td width="30" class="textmargin">密 &nbsp;码</td><td width="70%"><input class="pwdinput" type="password" type="text" /></td></tr>
+				<tr><td width="30%" class="textmargin">用户名</td><td width="70%"><input class="usernameinput" id="username" type="text" /><td></tr>
+				<tr><td width="30" class="textmargin">密 &nbsp;码</td><td width="70%"><input class="pwdinput" id="password" type="password" type="text" /></td></tr>
 			
 				
-				<tr ><td colspan="2"><a href="index.html"><input name="submit" type="image" class="loginbtn" title="登陆" src="css/images/login.gif" /></a>&nbsp; 
+				<tr ><td colspan="2"><input name="submit" type="image" class="loginbtn" title="登陆" src="css/images/login.gif" onclick="onLogin()"/>&nbsp; 
 				<input name="reset" type="image" class="resetbtn" title="重置" src="css/images/reset.gif" /><td></tr>
 			</table>
 			</div>
