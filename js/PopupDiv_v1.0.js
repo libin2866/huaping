@@ -164,7 +164,7 @@ $.fn.PopupDiv = function(mods, options){
         var myWrap = document.createElement("div");
         myWrap.style.position = "absolute";
         myWrap.id = container.data("val").PopupDivId;
-        myWrap.style.zIndex = 15000;
+        myWrap.style.zIndex = 5002;
         
         var myTi = document.createElement("div");
         myTi.className = "myTi";
@@ -228,7 +228,7 @@ $.fn.PopupDiv = function(mods, options){
         var myDiv = document.createElement("div");
         myIframe.id = "myIframe";
         myIframe.style.position = "absolute";
-        myIframe.style.zIndex = 10000;
+        myIframe.style.zIndex = 5000;
         myIframe.style.top = "0px";
         myIframe.style.left = "0px";
         myIframe.style.height = getHeight() + "px";
@@ -239,7 +239,7 @@ $.fn.PopupDiv = function(mods, options){
         
         myDiv.id = "myDiv";
         myDiv.style.position = "absolute";
-        myDiv.style.zIndex = 10001;
+        myDiv.style.zIndex = 5001;
         myDiv.style.top = "0px";
         myDiv.style.left = "0px";
         myDiv.style.height = getHeight() + "px";

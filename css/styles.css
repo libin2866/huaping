@@ -382,10 +382,12 @@ padding: 2px;
   border: 1px solid #CCC;
 }
 .xmkc .classlist {
+  overflow-y:auto;
   position:absolute;
-  z-index:99999;
+  z-index:15001;
   background-color: #F5FBFF;
   width:91%;
+  height: 96px;
   border: 1px solid #C9E4F4;
   font-size: 12px;
   line-height: 22px;
@@ -600,5 +602,12 @@ padding: 2px;
 
 }
 
+.popupAdd{
+  margin-top:10px;
+}
+
+.popupAdd tr td{
+  height: 27px;
+}
 
 
