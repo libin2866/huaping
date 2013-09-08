@@ -261,7 +261,95 @@ $(function(){
   <!--<img src="pic/H1.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:490px;"/>-->
 
 </div>
-<div id="part2" style="display:none;"><img src="pic/H2.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:495px;"/></div>
+<div id="part2" style="margin-left:175px;height:85%;bottom:10%;">
+    <!--<img src="pic/H2.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:495px;"/>-->
+     <br />
+        <div class="small_filter_area">违法数据录入 <img id="tablebtn" src="../images/pics/Opend.png"  style="float:right;height:35px" onclick="openClose('searchTable','tablebtn')"/> </div>  
+        <div id="searchTable" style="display:block;margin-right: 15px;">
+             <table  border="1" class="generalTable" cellspacing="0">
+             <tr><td width="15%"><p class="contitle2">上传图片<font color="red">*</font></p></td>
+                <td colspan="3">
+                <input type="text" class="inputtext" style="margin-top:9px;" name="userGroup">
+                <input type="text" class="inputtext" style="margin-top:9px;" name="userGroup">
+                <input type="text" class="inputtext" style="margin-top:9px;" name="userGroup">
+                 <input name="submit" type="image" class="btnbg" style="float:right;" src="../css/images/checkout.gif" /> 
+
+             </td></tr> 
+             <tr> <td style="width:15%"><p class="contitle2">车牌号码<font color="red">*</font></p></td>
+           <td align="left" style="width:35%"> 
+                 <div class="xmkc" style="border:0px;"> 
+                        <div>
+                            <input name="class" id="class_jcp" style=" width:30%;"readonly="readonly" type="text" class="selectlist" onClick=clicked('jcp'); value="选择">
+                            <input type="text" style="width:55%;height:28px;" name="carNum">
+                        </div> 
+                        <div id="hh_jcp" style="display:none;width:30%"  class="classlist">
+                           <ul>
+                              <li class="lis"><a href="#" onClick="gets_value('沪','jcp')">沪</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('浙','jcp')">浙</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('贵','jcp')">贵</a></li>
+                            </ul>
+                            <a href="#"><span onclick="hh_jcp.style.display='none'"  class="close">关闭</span></a>
+                        </div>
+                </div>
+           </td>
+           <td style="width:15%"><p class="contitle2">号牌种类</p></td>
+                <td align="left" style="width:35%">  
+                    <div class="xmkc" style="border:0px;"> 
+                        <div>
+                            <input name="class" id="class_hp" style=" width:30%;"readonly="readonly" type="text" class="selectlist" onClick=clicked('hp'); value="选择">
+                            <input type="text" style="width:55%;height:28px;" name="carNum">
+                        </div> 
+                        <div id="hh_hp" style="display:none;width:30%"  class="classlist">
+                           <ul>
+                              <li class="lis"><a href="#" onClick="gets_value('沪','hp')">沪</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('浙','hp')">浙</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('贵','hp')">贵</a></li>
+                            </ul>
+                            <a href="#"><span onclick="hh_hp.style.display='none'"  class="close">关闭</span></a>
+                        </div>
+                </div>
+
+                </td>
+
+             </tr> <tr> <td style="width:15%"><p class="contitle2">违法代码<font color="red">*</font></p></td>
+             <td align="left" style="width:35%"> 
+                 <div class="xmkc" style="border:0px;"> 
+                        <div>
+                            <input type="text" style="width:40%;height:28px;" name="carNum">
+                            <input name="class" id="class_wfdm" style=" width:45%;"readonly="readonly" type="text" class="selectlist" onClick=clicked('wfdm'); value="选择">
+                            
+                        </div> 
+                        <div id="hh_wfdm" style="display:none;width:30%"  class="classlist">
+                           <ul>
+                              <li class="lis"><a href="#" onClick="gets_value('沪','wfdm')">沪</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('浙','wfdm')">浙</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('贵','wfdm')">贵</a></li>
+                            </ul>
+                            <a href="#"><span onclick="hh_wfdm.style.display='none'"  class="close">关闭</span></a>
+                        </div>
+                </div>
+           </td>
+             <tr>
+             </tr>
+             <tr> 
+                 <td style="height:50px;width:15%;"> <p class="contitle2">备注:</p></td>
+                  <td colspan="3">  <input type="text" class="inputtext" style="margin-top:9px;width:95%;" name="userGroup">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <input name="submit" type="image" class="btnbg" style="float:right;" src="../css/images/checkout.gif" /> 
+                    <input name="add" type="image" id="PopupDivBtn_add" style="float:right;" class="btnbg2"  src="../css/images/add.gif"/>
+                </td>
+
+
+
+             </tr>
+         </table>
+         </div>
+</div>
+
+</div>
 <div id="part3" style="display:none;"><img src="pic/H3.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:490px;"/></div>
 <div id="part4" style="display:none;"><img src="pic/H4.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:490px;"/></div>
 <div id="part5" style="display:none;"><img src="pic/H5.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:490px;"/></div>
