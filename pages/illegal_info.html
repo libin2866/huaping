@@ -12,8 +12,8 @@
 <script type="text/javascript" src="../js/jquery-ui-timepicker-zh-CN.js"></script>
 <script type="text/javascript" src="../js/picker.js"></script>
  <script type="text/javascript">
-    $(function () {
-        $("#ui_timepicker1").datetimepicker({
+$(function () {
+        /*$("#ui_timepicker1").datetimepicker({
            // showOn: "button",
            //buttonImage: "../css/images/icon_calendar.png",
             //buttonImageOnly: true,
@@ -22,20 +22,20 @@
             stepHour: 1,
             stepMinute: 1,
             stepSecond: 1
-        })
-    })
-        $(function () {
-        $("#ui_timepicker2").datetimepicker({
-           // showOn: "button",
-           //buttonImage: "../css/images/icon_calendar.png",
-            //buttonImageOnly: true,
+        })*/
+        $("input[id^='ui_timepicker']").datetimepicker({
             showSecond: true,
             timeFormat: 'hh:mm:ss',
             stepHour: 1,
             stepMinute: 1,
             stepSecond: 1
         })
-    })
+
+
+})
+
+
+
 function css(cs,num)
 {
     var total=7;
@@ -48,7 +48,7 @@ function css(cs,num)
         document.getElementById("listmenu"+i).className="";
         document.getElementById('part'+i).style.display = "none";
     }
-       if(num != 1){
+       if(num == 2){
          document.getElementById('paging').style.display = "none";
        }else{
         document.getElementById('paging').style.display = "block";
@@ -77,21 +77,22 @@ function openClose(id,ctrlid)
 
 $(function(){
     var part1 = $("#part1");
-    var part2 = $("#part2");
+
+    var part3 = $("#part3");
     var i=1;
     $("#tablebtn").click(function(){
                     if($("#searchTable").is(":hidden")){
-                        $("#fortable").height($("#part1").height()-24+"px");
+                        $("#fortable").height(part1.height()-30+"px");
                     }else{
-                        $("#fortable").height($("#part1").height()-234+"px");
+                        $("#fortable").height(part1.height()-234+"px");
                     }
     })
 
-       $("#tablebtn2").click(function(){           
-                if($("#searchTable2").is(":hidden")){
-                    $("#fortable2").height($("#part2").height()-34+"px");
+    $("#tablebtn3").click(function(){           
+                if($("#searchTable3").is(":hidden")){
+                    $("#fortable3").height(part3.height()-33+"px");
                 }else{
-                    $("#fortable2").height($("#part2").height()-138+"px");
+                    $("#fortable3").height(part3.height()-234+"px");
                 }
     })
 
@@ -100,22 +101,25 @@ $(function(){
 
        if(part1.css('visibility')!="hidden"){
                 if($("#searchTable").is(":hidden")){
-                    $("#fortable").height($("#part1").height()-24+"px");
+                    $("#fortable").height(part1.height()-30+"px");
                 }else{
-                    $("#fortable").height($("#part1").height()-234+"px");
+                    $("#fortable").height(part1.height()-234+"px");
                 }
         }
-         if(part2.css('visibility')!="hidden"){
-                if($("#searchTable2").is(":visible")){
-                    $("#fortable2").height($("#part2").height()-138+"px");
+
+         if(part3.css('visibility')!="hidden"){
+                if($("#searchTable3").is(":hidden")){
+                    $("#fortable3").height(part3.height()-33+"px");
                 }else{
-                    $("#fortable2").height($("#part2").height()-34+"px");
+                    $("#fortable3").height(part3.height()-234+"px");
                 }
         }
-             $("#listmenu2").click(function(){           
+        $("#listmenu3").click(function(){           
                
-                    $("#fortable2").height($("#part2").height()-138+"px");
-                })
+                    $("#fortable3").height(part3.height()-234+"px");
+        })
+
+
                 
        /* }
         if(part2.is(':visible')){
@@ -150,7 +154,7 @@ $(function(){
     <br />
     <div class="small_filter_area">用户组设置 <img id="tablebtn" src="../images/pics/Opend.png"  style="float:right;height:35px" onclick="openClose('searchTable','tablebtn')"/> </div>  
      <div id="searchTable" style="display:block;margin-right: 15px;">
-        <table  class="generalTable" style="width:100%;background: #ffffff;border: 1px solid #5b5b5b;height:210px;" cellspacing="0">
+        <table  class="generalTable"  cellspacing="0">
             
            <!-- <tr bgcolor="#000" class="tabletitle" border="0px">
                  <td colspan="4" style="text-align:left">综合查询</td>
@@ -239,6 +243,7 @@ $(function(){
         <input type="text" class="inputtext" name="userGroup">
        -->
     </div>
+    <br/>
 
     <div class="fortable"  id="fortable" style="height:80%;">
      <table id="mytable" style="width:100%;">
@@ -249,10 +254,12 @@ $(function(){
                 <td style="width:5%">选择</td><td style="width:10%">号牌种类</td><td style="width:15%">车牌号码</td><td style="width:20%">违法时间</td> <td style="width:15%">路口</td><td style="width:10%">行使方向</td><td style="width:10%">车速</td><td style="width:15%">操作</td>
             </tr>
             <tr  bgcolor="#b5b5b5">
-                <td><input type="checkbox"></td><td>小型汽车</td><td>沪DH620</td><td>2013-07-22 07:39:12 </td><td>张江湾卡口</td><td>进城</td><td>180km/h</td><td>编辑 删除</td>
+                <td><input type="checkbox"></td><td>小型汽车</td><td>沪DH620</td><td>2013-07-22 07:39:12 </td><td>张江湾卡口</td><td>进城</td><td>180km/h</td><td><table width="100%;"><tr><td ><a  href="#" id="PopupDivBtn_edit"><div class="mywrapper">编辑</div></a></td>
+            <td><a href="#"><div class="mywrapper" >删除</div></a></td></tr></table></td>
             </tr>
             <tr  bgcolor="#c6c6c6">
-                <td><input type="checkbox"></td><td>支队</td><td> 沪A1234</td><td>2013-07-23 08:32:21 </td><td>张江湾卡口</td><td>出城</td><td>200km/s</td><td>编辑 删除</td>
+                <td><input type="checkbox"></td><td>支队</td><td> 沪A1234</td><td>2013-07-23 08:32:21 </td><td>张江湾卡口</td><td>出城</td><td>200km/s</td><td><table width="100%;"><tr><td ><a  href="#" ><div class="mywrapper">编辑</div></a></td>
+            <td><a href="#"><div class="mywrapper" >删除</div></a></td></tr></table></td>
             </tr>
          </table>
 
@@ -261,11 +268,11 @@ $(function(){
   <!--<img src="pic/H1.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:490px;"/>-->
 
 </div>
-<div id="part2" style="margin-left:175px;height:85%;bottom:10%;">
+<div id="part2" style="display:none;margin-left:175px;height:85%;bottom:10%;">
     <!--<img src="pic/H2.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:495px;"/>-->
      <br />
-        <div class="small_filter_area">违法数据录入 <img id="tablebtn" src="../images/pics/Opend.png"  style="float:right;height:35px" onclick="openClose('searchTable','tablebtn')"/> </div>  
-        <div id="searchTable" style="display:block;margin-right: 15px;">
+        <div class="small_filter_area">违法数据录入 <img id="tablebtn2" src="../images/pics/Opend.png"  style="float:right;height:35px" onclick="openClose('searchTable2','tablebtn2')"/> </div>  
+        <div id="searchTable2" style="display:block;margin-right: 15px;">
              <table  border="1" class="generalTable" cellspacing="0">
              <tr><td width="15%"><p class="contitle2">上传图片<font color="red">*</font></p></td>
                 <td colspan="3">
@@ -350,11 +357,116 @@ $(function(){
 </div>
 
 </div>
-<div id="part3" style="display:none;"><img src="pic/H3.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:490px;"/></div>
-<div id="part4" style="display:none;"><img src="pic/H4.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:490px;"/></div>
-<div id="part5" style="display:none;"><img src="pic/H5.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:490px;"/></div>
-<div id="part6" style="display:none;"></div>
-<div id="part7" style="display:none;"><img src="pic/H7.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:490px;"/></div>
+<div id="part3" style="display:none;margin-left:175px;height:85%;bottom:10%;">
+    <br/>
+   <!-- <img src="pic/H3.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:490px;"/>-->
+   <div class="small_filter_area">用户组设置 <img id="tablebtn3" src="../images/pics/Opend.png"  style="float:right;height:35px" onclick="openClose('searchTable3','tablebtn3')"/> </div>  
+     <div id="searchTable3" style="display:block;margin-right: 15px;">
+        <table  class="generalTable" cellspacing="0">
+             <tr>
+                <td width="11%"><p class="contitle">违法时间</p></td><td width="22%">
+                <input type="text" name="datetime7" id="ui_timepicker7" class="timepicker" value=""></td>
+                <td width="10%"><p class="contitle">&nbsp;至&nbsp;</p></td><td width="23%">
+                <input type="text" name="datetime8" id="ui_timepicker8" class="timepicker" value=""></td>
+                <td width="8%"><p class="contitle">路&nbsp;&nbsp;口</p></td><td width="26%">
+                    <div class="xmkc" style="border:0px;"> 
+                        <div><input name="class" id="class_lk3" readonly="readonly" type="text" class="selectlist" onClick=clicked('lk3'); value="请选择行驶方向"></div>
+                        <div id="hh_lk3" style="display:none" class="classlist">
+                           <ul>
+                              <li class="lis"><a href="#" onClick="gets_value('ASP','lk3')">ASP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('PHP','lk3')">PHP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('JSP','lk3')">JSP</a></li>
+                            </ul>
+                            <a href="#"><span onclick="hh_lk3.style.display='none'" class="close">关闭</span></a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+             <tr>
+                <td width="11%"><p class="contitle">操作时间</p></td><td width="22%">
+                <input type="text" name="datetime9" id="ui_timepicker9" class="timepicker" value=""></td>
+                <td width="10%"><p class="contitle">&nbsp;至&nbsp;</p></td><td width="23%">
+                <input type="text" name="datetime10" id="ui_timepicker10" class="timepicker" value=""></td>
+                <td width="8%"><p class="contitle">车&nbsp;&nbsp;道</p></td><td width="26%">
+                    <div class="xmkc" style="border:0px;"> 
+                        <div><input name="class" id="class_cd3" readonly="readonly" type="text" class="selectlist" onClick=clicked('lk3'); value="请选择行驶方向"></div>
+                        <div id="hh_cd3" style="display:none" class="classlist">
+                           <ul>
+                              <li class="lis"><a href="#" onClick="gets_value('ASP','cd3')">ASP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('PHP','cd3')">PHP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('JSP','cd3')">JSP</a></li>
+                            </ul>
+                            <a href="#"><span onclick="hh_cd3.style.display='none'" class="close">关闭</span></a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+              <tr>
+                <td width="11%"><p class="contitle">行驶方向</p></td><td width="22%">
+                    <div class="xmkc" style="border:0px;"> 
+                        <div><input name="class" id="class_xsfx3" readonly="readonly" type="text" class="selectlist" onClick=clicked('xsfx3'); value="请选择行驶方向"></div>
+                        <div id="hh_xsfx3" style="display:none" class="classlist">
+                           <ul>
+                              <li class="lis"><a href="#" onClick="gets_value('ASP','xsfx3')">ASP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('PHP','xsfx3')">PHP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('JSP','xsfx3')">JSP</a></li>
+                            </ul>
+                            <a href="#"><span onclick="hh_xsfx3.style.display='none'" class="close">关闭</span></a>
+                        </div>
+                    </div>
+
+                </td>
+                <td width="10%"><p class="contitle">车牌号码</p></td><td width="23%">
+                    <div class="xmkc" style="border:0px;"> 
+                        <div>
+                            <input name="class" id="class_cphm3" style=" width:30%;"readonly="readonly" type="text" class="selectlist" onClick=clicked('cphm3'); value="选择">
+                            <input type="text" style="width:55%;height:28px;" name="carNum">
+                        </div> 
+                        <div id="hh_cphm3" style="display:none;width:30%"  class="classlist">
+                           <ul>
+                              <li class="lis"><a href="#" onClick="gets_value('沪','cphm3')">沪</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('浙','cphm3')">浙</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('贵','cphm3')">贵</a></li>
+                            </ul>
+                            <a href="#"><span onclick="hh_cphm3.style.display='none'"  class="close">关闭</span></a>
+                        </div>
+                </div>
+                </td>
+                <td width="8%"><p class="contitle">车&nbsp;&nbsp;速</p></td><td width="26%"><input type="text" style="width:30%;height:25px;margin-top:3px;text-align:center;" name="userGroup">至<input type="text" style="width:30%;height:25px;margin-top:3px;text-align:center;" name="userGroup">KM/H</td>
+            </tr>
+            <tr><td colspan="6" style="text-align:right;">
+                <input name="submit" type="image" class="btnbg" style="float:none;" src="../css/images/checkout.gif" /> 
+                    <input name="add" type="image" id="PopupDivBtn_add"  style="float:none;"class="btnbg2"  src="../css/images/add.gif"/>
+            </td></tr>
+
+        </table>
+    </div>
+<br />
+       <div class="fortable"  id="fortable3" style="height:80%;">
+     <table id="mytable" style="width:100%;">
+            <tr bgcolor="#000" class="tabletitle" border="0px">
+                 <td colspan="8" style="text-align:left">查询结果</td>
+            </tr>
+            <tr border="1px">
+                <td style="width:5%">选择</td><td style="width:10%">号牌种类</td><td style="width:15%">车牌号码</td><td style="width:20%">违法时间</td> <td style="width:15%">路口</td><td style="width:10%">行使方向</td><td style="width:10%">车速</td><td style="width:15%">操作</td>
+            </tr>
+            <tr  bgcolor="#b5b5b5">
+                <td><input type="checkbox"></td><td>小型汽车</td><td>沪DH620</td><td>2013-07-22 07:39:12 </td><td>张江湾卡口</td><td>进城</td><td>180km/h</td><td><table width="100%;"><tr><td ><a  href="#" ><div class="mywrapper">编辑</div></a></td>
+            <td><a href="#"><div class="mywrapper" >删除</div></a></td></tr></table></td>
+            </tr>
+            <tr  bgcolor="#c6c6c6">
+                <td><input type="checkbox"></td><td>支队</td><td> 沪A1234</td><td>2013-07-23 08:32:21 </td><td>张江湾卡口</td><td>出城</td><td>200km/s</td><td><table width="100%;"><tr><td ><a  href="#" ><div class="mywrapper">编辑</div></a></td>
+            <td><a href="#"><div class="mywrapper" >删除</div></a></td></tr></table></td>
+            </tr>
+         </table>
+
+    </div>
+
+</div>
+<div id="part4" style="display:none;margin-left:175px;height:85%;bottom:10%;"><img src="pic/H4.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:490px;"/></div>
+<div id="part5" style="display:none;margin-left:175px;height:85%;bottom:10%;"><img src="pic/H5.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:490px;"/></div>
+<div id="part6" style="display:none;margin-left:175px;height:85%;bottom:10%;"></div>
+<div id="part7" style="display:none;margin-left:175px;height:85%;bottom:10%;"><img src="pic/H7.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:490px;"/></div>
 
 <div class="paging" id="paging" >
     <table align="center" >
