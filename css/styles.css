@@ -384,7 +384,7 @@ padding: 2px;
 .xmkc .classlist {
   overflow-y:auto;
   position:absolute;
-  z-index:15001;
+  z-index:5001;
   background-color: #F5FBFF;
   width:91%;
   height: 96px;
@@ -610,4 +610,7 @@ padding: 2px;
   height: 27px;
 }
 
+#part2 .contitle2{
+  height:10px;
+}
 

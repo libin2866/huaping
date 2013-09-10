@@ -38,7 +38,7 @@ $(function () {
 
 function css(cs,num)
 {
-    var total=7;
+    var total=6;
     for(i=1;i<=total;++i){
         if(i==num) {
             document.getElementById('listmenu'+i).className=cs;
@@ -79,6 +79,7 @@ $(function(){
     var part1 = $("#part1");
 
     var part3 = $("#part3");
+    var part4 = $("#part4");
     var i=1;
     $("#tablebtn").click(function(){
                     if($("#searchTable").is(":hidden")){
@@ -95,6 +96,13 @@ $(function(){
                     $("#fortable3").height(part3.height()-234+"px");
                 }
     })
+        $("#tablebtn4").click(function(){           
+                if($("#searchTable4").is(":hidden")){
+                    $("#fortable4").height(part4.height()-30+"px");
+                }else{
+                    $("#fortable4").height(part4.height()-234+"px");
+                }
+    })
 
 
     $(window).resize(function (){
@@ -106,6 +114,10 @@ $(function(){
                     $("#fortable").height(part1.height()-234+"px");
                 }
         }
+        $("#listmenu1").click(function(){           
+               
+                    $("#fortable").height(part1.height()-234+"px");
+        })
 
          if(part3.css('visibility')!="hidden"){
                 if($("#searchTable3").is(":hidden")){
@@ -117,6 +129,18 @@ $(function(){
         $("#listmenu3").click(function(){           
                
                     $("#fortable3").height(part3.height()-234+"px");
+        })
+
+         if(part4.css('visibility')!="hidden"){
+                if($("#searchTable4").is(":hidden")){
+                    $("#fortable4").height(part4.height()-30+"px");
+                }else{
+                    $("#fortable4").height(part4.height()-234+"px");
+                }
+        }
+        $("#listmenu4").click(function(){           
+               
+                    $("#fortable4").height(part4.height()-234+"px");
         })
 
 
@@ -146,13 +170,13 @@ $(function(){
                 <li><a href="#" onclick=css("clicked",3) id="listmenu3">数据审核</a></li>
                 <li><a href="#" onclick=css("clicked",4) id="listmenu4">数据复核</a></li>
                 <li><a href="#" onclick=css("clicked",5) id="listmenu5">违法公告</a></li>
-                <li><a href="#" onclick=css("clicked",6) id="listmenu6">违法处理</a></li>
-                <li><a href="#" onclick=css("clicked",7) id="listmenu7">白名单管理</a></li>
+                <!--<li><a href="#" onclick=css("clicked",6) id="listmenu6">违法处理</a></li>-->
+                <li><a href="#" onclick=css("clicked",6) id="listmenu6">白名单管理</a></li>
 
             </ul>
 <div id="part1" style="margin-left:175px;height:85%;bottom:10%;">
     <br />
-    <div class="small_filter_area">用户组设置 <img id="tablebtn" src="../images/pics/Opend.png"  style="float:right;height:35px" onclick="openClose('searchTable','tablebtn')"/> </div>  
+    <div class="small_filter_area">综合查询 <img id="tablebtn" src="../images/pics/Opend.png"  style="float:right;height:35px" onclick="openClose('searchTable','tablebtn')"/> </div>  
      <div id="searchTable" style="display:block;margin-right: 15px;">
         <table  class="generalTable"  cellspacing="0">
             
@@ -274,46 +298,46 @@ $(function(){
      <br />
         <div class="small_filter_area">违法数据录入 <img id="tablebtn2" src="../images/pics/Opend.png"  style="float:right;height:35px" onclick="openClose('searchTable2','tablebtn2')"/> </div>  
         <div id="searchTable2" style="display:block;margin-right: 15px;">
-             <table  border="1" class="generalTable" cellspacing="0">
+             <table  class="generalTable" cellspacing="0">
              <tr><td width="15%"><p class="contitle2">上传图片<font color="red">*</font></p></td>
                 <td colspan="3">
                 <input type="text" class="inputtext" style="margin-top:9px;" name="userGroup">
                 <input type="text" class="inputtext" style="margin-top:9px;" name="userGroup">
                 <input type="text" class="inputtext" style="margin-top:9px;" name="userGroup">
-                 <input name="submit" type="image" class="btnbg" style="float:right;" src="../css/images/checkout.gif" /> 
+                 <input name="submit" type="image" class="btnbg" style="float:right;" src="../css/images/up.gif" /> 
 
              </td></tr> 
              <tr> <td style="width:15%"><p class="contitle2">车牌号码<font color="red">*</font></p></td>
            <td align="left" style="width:35%"> 
                  <div class="xmkc" style="border:0px;"> 
                         <div>
-                            <input name="class" id="class_jcp" style="width:30%;"readonly="readonly" type="text" class="selectlist" onClick=clicked('jcp'); value="选择">
+                            <input name="class" id="class_jcp2" style="width:30%;"readonly="readonly" type="text" class="selectlist" onClick=clicked('jcp2'); value="选择">
                             <input type="text" class="inputtext" style="float:none;margin-top:0px;width:55%;height:28px;" name="carNum">
                         </div> 
-                        <div id="hh_jcp" style="display:none;width:30%"  class="classlist">
+                        <div id="hh_jcp2" style="display:none;width:30%"  class="classlist">
                            <ul>
-                              <li class="lis"><a href="#" onClick="gets_value('沪','jcp')">沪</a></li>
-                              <li class="lis"><a href="#" onClick="gets_value('浙','jcp')">浙</a></li>
-                              <li class="lis"><a href="#" onClick="gets_value('贵','jcp')">贵</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('沪','jcp2')">沪</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('浙','jcp2')">浙</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('贵','jcp2')">贵</a></li>
                             </ul>
-                            <a href="#"><span onclick="hh_jcp.style.display='none'"  class="close">关闭</span></a>
+                            <a href="#"><span onclick="hh_jcp2.style.display='none'"  class="close">关闭</span></a>
                         </div>
                 </div>
            </td>
-           <td style="width:15%"><p class="contitle2">号牌种类</p></td>
+           <td style="width:15%"><p class="contitle2">号牌种类&nbsp;</p></td>
                 <td align="left" style="width:35%">  
                     <div class="xmkc" style="border:0px;"> 
                         <div>
-                            <input name="class" id="class_hp" readonly="readonly" type="text" class="selectlist" onClick=clicked('hp'); value="选择">
+                            <input name="class" id="class_hp2" readonly="readonly" type="text" class="selectlist" onClick=clicked('hp2'); value="选择">
                            
                         </div> 
-                        <div id="hh_hp" style="display:none;"  class="classlist">
+                        <div id="hh_hp2" style="display:none;"  class="classlist">
                            <ul>
-                              <li class="lis"><a href="#" onClick="gets_value('沪','hp')">沪</a></li>
-                              <li class="lis"><a href="#" onClick="gets_value('浙','hp')">浙</a></li>
-                              <li class="lis"><a href="#" onClick="gets_value('贵','hp')">贵</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('沪','hp2')">沪</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('浙','hp2')">浙</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('贵','hp2')">贵</a></li>
                             </ul>
-                            <a href="#"><span onclick="hh_hp.style.display='none'"  class="close">关闭</span></a>
+                            <a href="#"><span onclick="hh_hp2.style.display='none'"  class="close">关闭</span></a>
                         </div>
                 </div>
 
@@ -330,15 +354,15 @@ $(function(){
                     <td width="60%">
                          <div class="xmkc" style="border:0px;"> 
                                 <div>
-                                    <input name="class_wfdm" id="class_wfdm"  readonly="readonly" type="text" class="selectlist" onClick=clicked('wfdm'); value="选择">
+                                    <input name="class_wfdm2" id="class_wfdm2"  readonly="readonly" type="text" class="selectlist" onClick=clicked('wfdm2'); value="选择">
                                 </div> 
-                                <div id="hh_wfdm" style="display:none;"  class="classlist">
+                                <div id="hh_wfdm2" style="display:none;"  class="classlist">
                                    <ul>
-                                      <li class="lis"><a href="#" onClick="gets_value('沪','wfdm')">沪</a></li>
-                                      <li class="lis"><a href="#" onClick="gets_value('浙','wfdm')">浙</a></li>
-                                      <li class="lis"><a href="#" onClick="gets_value('贵','wfdm')">贵</a></li>
+                                      <li class="lis"><a href="#" onClick="gets_value('沪','wfdm2')">沪</a></li>
+                                      <li class="lis"><a href="#" onClick="gets_value('浙','wfdm2')">浙</a></li>
+                                      <li class="lis"><a href="#" onClick="gets_value('贵','wfdm2')">贵</a></li>
                                     </ul>
-                                    <a href="#"><span onclick="hh_wfdm.style.display='none'"  class="close">关闭</span></a>
+                                    <a href="#"><span onclick="hh_wfdm2.style.display='none'"  class="close">关闭</span></a>
                                 </div>
                         </div>
                         </td>
@@ -378,76 +402,152 @@ $(function(){
                 </td>
             </tr>
             <tr>
-                <td style="width:15%"><p class="contitle2">车&nbsp;&nbsp;&nbsp;&nbsp;速</p></td>
+                <td style="width:15%"><p class="contitle2">车&nbsp;&nbsp;&nbsp;&nbsp;速&nbsp;</p></td>
                 <td align="left" style="width:35%"> 
-                    <input type="text" class="inputtext" style="width:90%;height:28px;" >
-                    </div>
+                    <input type="text" class="inputtext" style="width:90%;height:28px;" > 
                 </td>
                 <td style="width:15%"><p class="contitle2">行驶方向<font color="red">*</font></p></td>
                 <td align="left" style="width:35%"> 
                      <div class="xmkc" style="border:0px;"> 
-                        <div><input name="class_xsfx" id="class_xsfx" readonly="readonly" type="text" class="selectlist" onClick=clicked('xsfx'); value="请选择车道"></div>
-                        <div id="hh_xsfx" style="display:none" class="classlist">
+                        <div><input name="class_xsfx2" id="class_xsfx2" readonly="readonly" type="text" class="selectlist" onClick=clicked('xsfx2'); value="请选择车道"></div>
+                        <div id="hh_xsfx2" style="display:none" class="classlist">
                            <ul>
-                              <li class="lis"><a href="#" onClick="gets_value('ASP','xsfx')">ASP</a></li>
-                              <li class="lis"><a href="#" onClick="gets_value('PHP','xsfx')">PHP</a></li>
-                              <li class="lis"><a href="#" onClick="gets_value('JSP','xsfx')">JSP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('ASP','xsfx2')">ASP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('PHP','xsfx2')">PHP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('JSP','xsfx2')">JSP</a></li>
                             </ul>
-                            <a href="#"><span onclick="hh_xsfx.style.display='none'" class="close">关闭</span></a>
+                            <a href="#"><span onclick="hh_xsfx2.style.display='none'" class="close">关闭</span></a>
                         </div>
                     </div>
 
                 </td>
             </tr>
              <tr>
-                <td style="width:15%"><p class="contitle2">车牌颜色<font color="red">*</font></p></td>
+                <td style="width:15%"><p class="contitle2">车牌颜色&nbsp;</p></td>
                 <td align="left" style="width:35%"> 
                     <div class="xmkc" style="border:0px;"> 
-                        <div><input name="class_cpys" id="class_cpys" readonly="readonly" type="text" class="selectlist" onClick=clicked('cpys'); value="请选择路口"></div>
-                        <div id="hh_cpys" style="display:none" class="classlist">
+                        <div><input name="class_cpys" id="class_cpys2" readonly="readonly" type="text" class="selectlist" onClick=clicked('cpys2'); value="请选择路口"></div>
+                        <div id="hh_cpys2" style="display:none" class="classlist">
                            <ul>
-                              <li class="lis"><a href="#" onClick="gets_value('ASP','cpys')">ASP</a></li>
-                              <li class="lis"><a href="#" onClick="gets_value('PHP','cpys')">PHP</a></li>
-                              <li class="lis"><a href="#" onClick="gets_value('JSP','cpys')">JSP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('ASP','cpys2')">ASP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('PHP','cpys2')">PHP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('JSP','cpys2')">JSP</a></li>
                             </ul>
-                            <a href="#"><span onclick="hh_lk2.style.display='none'" class="close">关闭</span></a>
+                            <a href="#"><span onclick="hh_cpys2.style.display='none'" class="close">关闭</span></a>
                         </div>
                     </div>
                 </td>
-                <td style="width:15%"><p class="contitle2">车身颜色<font color="red">*</font></p></td>
+                <td style="width:15%"><p class="contitle2">车身颜色&nbsp;</p></td>
                 <td align="left" style="width:35%"> 
                      <div class="xmkc" style="border:0px;"> 
-                        <div><input name="class_csys" id="class_csys" readonly="readonly" type="text" class="selectlist" onClick=clicked('csys'); value="请选择车道"></div>
-                        <div id="hh_csys" style="display:none" class="classlist">
+                        <div><input name="class_csys2" id="class_csys2" readonly="readonly" type="text" class="selectlist" onClick=clicked('csys2'); value="请选择车道"></div>
+                        <div id="hh_csys2" style="display:none" class="classlist">
                            <ul>
-                              <li class="lis"><a href="#" onClick="gets_value('ASP','csys')">ASP</a></li>
-                              <li class="lis"><a href="#" onClick="gets_value('PHP','csys')">PHP</a></li>
-                              <li class="lis"><a href="#" onClick="gets_value('JSP','csys')">JSP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('ASP','csys2')">ASP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('PHP','csys2')">PHP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('JSP','csys2')">JSP</a></li>
                             </ul>
-                            <a href="#"><span onclick="hh_csys.style.display='none'" class="close">关闭</span></a>
+                            <a href="#"><span onclick="hh_csys2.style.display='none'" class="close">关闭</span></a>
                         </div>
                     </div>
 
                 </td>
             </tr>
+            <tr>
+                <td style="width:15%"><p class="contitle2">车辆品牌&nbsp;</p></td>
+                <td align="left" style="width:35%"> 
+                    <div class="xmkc" style="border:0px;"> 
+                        <div><input name="class_clpp2" id="class_clpp2" readonly="readonly" type="text" class="selectlist" onClick=clicked('clpp2'); value="请选择路口"></div>
+                        <div id="hh_clpp2" style="display:none" class="classlist">
+                           <ul>
+                              <li class="lis"><a href="#" onClick="gets_value('ASP','clpp2')">ASP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('PHP','clpp2')">PHP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('JSP','clpp2')">JSP</a></li>
+                            </ul>
+                            <a href="#"><span onclick="hh_clpp2.style.display='none'" class="close">关闭</span></a>
+                        </div>
+                    </div>
+                </td>
+                <td style="width:15%"><p class="contitle2">车辆外形&nbsp;</p></td>
+                <td align="left" style="width:35%"> 
+                     <div class="xmkc" style="border:0px;"> 
+                        <div><input name="class_clwx2" id="class_clwx2" readonly="readonly" type="text" class="selectlist" onClick=clicked('clwx2'); value="请选择车道"></div>
+                        <div id="hh_clwx2" style="display:none" class="classlist">
+                           <ul>
+                              <li class="lis"><a href="#" onClick="gets_value('ASP','clwx2')">ASP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('PHP','clwx2')">PHP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('JSP','clwx2')">JSP</a></li>
+                            </ul>
+                            <a href="#"><span onclick="hh_clwx2.style.display='none'" class="close">关闭</span></a>
+                        </div>
+                    </div>
 
-
-             <tr><td></td>
-             </tr>
+                </td>
+            </tr>
+            <tr> <td style="width:15%"><p class="contitle2">车主姓名&nbsp;</p></td>
+                <td align="left" style="width:35%"> 
+                    <input type="text" class="inputtext" style="width:90%;height:28px;" > 
+                </td>
+                 <td style="width:15%"><p class="contitle2">联系电话&nbsp;</p></td>
+                <td align="left" style="width:35%"> 
+                    <input type="text" class="inputtext" style="width:90%;height:28px;" > 
+                </td>
+              </tr>
+               <tr> <td style="width:15%"><p class="contitle2">行政区划&nbsp;</p></td>
+                <td align="left" style="width:35%"> 
+                    <input type="text" class="inputtext" style="width:90%;height:28px;" > 
+                </td>
+                 <td style="width:15%"><p class="contitle2">详细地址&nbsp;</p></td>
+                <td align="left" style="width:35%"> 
+                    <input type="text" class="inputtext" style="width:90%;height:28px;" > 
+                </td>
+              </tr>
+              <tr><td width="15%"><p class="contitle2">违法时间<font color="red">*</font></p></td>
+                <td width="35%">
+                <input type="text" name="datetime3" id="ui_timepicker3" class="timepicker" value=""></td>
+                <td width="15%"><p class="contitle2">录入时间<font color="red">*</font></p></td>
+                <td width="35%">
+                <input type="text" name="datetime4" id="ui_timepicker4" class="timepicker" value=""></td>
+              </tr>
+               <tr><td width="15%"><p class="contitle2">红灯开启时间&nbsp;</p></td>
+                <td width="35%">
+                <input type="text" name="datetime5" id="ui_timepicker5" class="timepicker" value=""></td>
+                <td width="15%"><p class="contitle2">红灯结束时间&nbsp;</p></td>
+                <td width="35%">
+                <input type="text" name="datetime6" id="ui_timepicker6" class="timepicker" value=""></td>
+              </tr>
+ 
              <tr> 
-                 <td style="height:50px;width:15%;"> <p class="contitle2">备注:</p></td>
+                 <td style="height:50px;width:15%;"> <p class="contitle2">备注&nbsp;</p></td>
                   <td colspan="3">  <input type="text" class="inputtext" style="margin-top:9px;width:95%;" name="userGroup">
                 </td>
             </tr>
+            <tr><td width="15"><p class="contitle2">数据种类&nbsp;</p></td><td width="35%">
+              <input type="checkbox">电子警察违法记录&nbsp;&nbsp;
+              <input type="checkbox">卡口违法记录
+
+            </td>
+              <td width="15%"><p class="contitle2">发布步骤&nbsp;</p></td><td width="35%">
+                <div class="xmkc" style="border:0px;"> 
+                        <div><input name="class_fbbz2" id="class_fbbz2" readonly="readonly" type="text" class="selectlist" onClick=clicked('fbbz2'); value="请选择路口"></div>
+                        <div id="hh_fbbz2" style="display:none" class="classlist">
+                           <ul>
+                              <li class="lis"><a href="#" onClick="gets_value('ASP','fbbz2')">ASP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('PHP','fbbz2')">PHP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('JSP','fbbz2')">JSP</a></li>
+                            </ul>
+                            <a href="#"><span onclick="hh_fbbz2.style.display='none'" class="close">关闭</span></a>
+                        </div>
+                    </div>
+              </td>
+             </tr>
             <tr>
                 <td colspan="4">
                     <input name="submit" type="image" class="btnbg" style="float:right;" src="../css/images/checkout.gif" /> 
                     <input name="add" type="image" id="PopupDivBtn_add" style="float:right;" class="btnbg2"  src="../css/images/add.gif"/>
                 </td>
-
-
-
              </tr>
+             <tr><td>&nbsp;</td></tr>
          </table>
          </div>
 </div>
@@ -485,7 +585,7 @@ $(function(){
                 <input type="text" name="datetime10" id="ui_timepicker10" class="timepicker" value=""></td>
                 <td width="8%"><p class="contitle">车&nbsp;&nbsp;道</p></td><td width="26%">
                     <div class="xmkc" style="border:0px;"> 
-                        <div><input name="class" id="class_cd3" readonly="readonly" type="text" class="selectlist" onClick=clicked('lk3'); value="请选择行驶方向"></div>
+                        <div><input name="class" id="class_cd3" readonly="readonly" type="text" class="selectlist" onClick=clicked('cd3'); value="请选择行驶方向"></div>
                         <div id="hh_cd3" style="display:none" class="classlist">
                            <ul>
                               <li class="lis"><a href="#" onClick="gets_value('ASP','cd3')">ASP</a></li>
@@ -559,10 +659,131 @@ $(function(){
     </div>
 
 </div>
-<div id="part4" style="display:none;margin-left:175px;height:85%;bottom:10%;"><img src="pic/H4.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:490px;"/></div>
+
+ 
+<div id="part4" style="display:none;margin-left:175px;height:85%;bottom:10%;">
+    <br/>
+   <!--  <img src="pic/H4.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:490px;"/>-->
+   <div class="small_filter_area">数据复核 <img id="tablebtn4" src="../images/pics/Opend.png"  style="float:right;height:35px" onclick="openClose('searchTable4','tablebtn4')"/> </div>  
+     <div id="searchTable4" style="display:block;margin-right: 15px;">
+        <table  class="generalTable" cellspacing="0">
+             <tr>
+                <td width="11%"><p class="contitle">违法时间</p></td><td width="22%">
+                <input type="text" name="datetime11" id="ui_timepicker11" class="timepicker" value=""></td>
+                <td width="10%"><p class="contitle">&nbsp;至&nbsp;</p></td><td width="23%">
+                <input type="text" name="datetime12" id="ui_timepicker12" class="timepicker" value=""></td>
+                <td width="8%"><p class="contitle">路&nbsp;&nbsp;口</p></td><td width="26%">
+                    <div class="xmkc" style="border:0px;"> 
+                        <div><input name="class" id="class_lk4" readonly="readonly" type="text" class="selectlist" onClick=clicked('lk4'); value="请选择行驶方向"></div>
+                        <div id="hh_lk4" style="display:none" class="classlist">
+                           <ul>
+                              <li class="lis"><a href="#" onClick="gets_value('ASP','lk4')">ASP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('PHP','lk4')">PHP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('JSP','lk4')">JSP</a></li>
+                            </ul>
+                            <a href="#"><span onclick="hh_lk4.style.display='none'" class="close">关闭</span></a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+             <tr>
+                <td width="11%"><p class="contitle">操作时间</p></td><td width="22%">
+                <input type="text" name="datetime13" id="ui_timepicker13" class="timepicker" value=""></td>
+                <td width="10%"><p class="contitle">&nbsp;至&nbsp;</p></td><td width="23%">
+                <input type="text" name="datetime14" id="ui_timepicker14" class="timepicker" value=""></td>
+                <td width="8%"><p class="contitle">车&nbsp;&nbsp;道</p></td><td width="26%">
+                    <div class="xmkc" style="border:0px;"> 
+                        <div><input name="class" id="class_cd4" readonly="readonly" type="text" class="selectlist" onClick=clicked('cd4'); value="请选择行驶方向"></div>
+                        <div id="hh_cd4" style="display:none" class="classlist">
+                           <ul>
+                              <li class="lis"><a href="#" onClick="gets_value('ASP','cd4')">ASP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('PHP','cd4')">PHP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('JSP','cd4')">JSP</a></li>
+                            </ul>
+                            <a href="#"><span onclick="hh_cd4.style.display='none'" class="close">关闭</span></a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+              <tr>
+                <td width="11%"><p class="contitle">行驶方向</p></td><td width="22%">
+                    <div class="xmkc" style="border:0px;"> 
+                        <div><input name="class" id="class_xsfx4" readonly="readonly" type="text" class="selectlist" onClick=clicked('xsfx4'); value="请选择行驶方向"></div>
+                        <div id="hh_xsfx4" style="display:none" class="classlist">
+                           <ul>
+                              <li class="lis"><a href="#" onClick="gets_value('ASP','xsfx4')">ASP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('PHP','xsfx4')">PHP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('JSP','xsfx4')">JSP</a></li>
+                            </ul>
+                            <a href="#"><span onclick="hh_xsfx4.style.display='none'" class="close">关闭</span></a>
+                        </div>
+                    </div>
+
+                </td>
+                <td width="10%"><p class="contitle">车牌号码</p></td><td width="23%">
+                    <div class="xmkc" style="border:0px;"> 
+                        <div>
+                            <input name="class" id="class_cphm4" style=" width:30%;"readonly="readonly" type="text" class="selectlist" onClick=clicked('cphm4'); value="选择">
+                            <input type="text" style="width:55%;height:28px;" name="carNum">
+                        </div> 
+                        <div id="hh_cphm4" style="display:none;width:30%"  class="classlist">
+                           <ul>
+                              <li class="lis"><a href="#" onClick="gets_value('沪','cphm4')">沪</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('浙','cphm4')">浙</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('贵','cphm4')">贵</a></li>
+                            </ul>
+                            <a href="#"><span onclick="hh_cphm4.style.display='none'"  class="close">关闭</span></a>
+                        </div>
+                </div>
+                </td>
+                <td width="8%"><p class="contitle">车&nbsp;&nbsp;速</p></td><td width="26%"><input type="text" style="width:30%;height:25px;margin-top:3px;text-align:center;" name="userGroup">至<input type="text" style="width:30%;height:25px;margin-top:3px;text-align:center;" name="userGroup">KM/H</td>
+            </tr>
+            <tr><td width="10%"><p class="contitle">删除原因</p></td><td width="22%">
+              <div class="xmkc" style="border:0px;"> 
+                        <div><input name="class" id="class_scyy4" readonly="readonly" type="text" class="selectlist" onClick=clicked('scyy4'); value="请选择行驶方向"></div>
+                        <div id="hh_scyy4" style="display:none" class="classlist">
+                           <ul>
+                              <li class="lis"><a href="#" onClick="gets_value('ASP','scyy4')">ASP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('PHP','scyy4')">PHP</a></li>
+                              <li class="lis"><a href="#" onClick="gets_value('JSP','scyy4')">JSP</a></li>
+                            </ul>
+                            <a href="#"><span onclick="hh_scyy4.style.display='none'" class="close">关闭</span></a>
+                        </div>
+                    </div>
+                  </td>
+              <td colspan="4" style="text-align:right;">
+                <input name="submit" type="image" class="btnbg" style="float:none;" src="../css/images/checkout.gif" /> 
+                    <input name="add" type="image" id="PopupDivBtn_add"  style="float:none;"class="btnbg2"  src="../css/images/add.gif"/>
+            </td></tr>
+
+        </table>
+    </div>
+<br />
+       <div class="fortable"  id="fortable4" style="height:80%;">
+     <table id="mytable" style="width:100%;">
+            <tr bgcolor="#000" class="tabletitle" border="0px">
+                 <td colspan="8" style="text-align:left">查询结果</td>
+            </tr>
+            <tr border="1px">
+                <td style="width:5%">选择</td><td style="width:10%">号牌种类</td><td style="width:15%">车牌号码</td><td style="width:20%">违法时间</td> <td style="width:15%">路口</td><td style="width:10%">行使方向</td><td style="width:10%">车速</td><td style="width:15%">操作</td>
+            </tr>
+            <tr  bgcolor="#b5b5b5">
+                <td><input type="checkbox"></td><td>小型汽车</td><td>沪DH620</td><td>2013-07-22 07:39:12 </td><td>张江湾卡口</td><td>进城</td><td>180km/h</td><td><table width="100%;"><tr><td ><a  href="#" ><div class="mywrapper">编辑</div></a></td>
+            <td><a href="#"><div class="mywrapper" >删除</div></a></td></tr></table></td>
+            </tr>
+            <tr  bgcolor="#c6c6c6">
+                <td><input type="checkbox"></td><td>支队</td><td> 沪A1234</td><td>2013-07-23 08:32:21 </td><td>张江湾卡口</td><td>出城</td><td>200km/s</td><td><table width="100%;"><tr><td ><a  href="#" ><div class="mywrapper">编辑</div></a></td>
+            <td><a href="#"><div class="mywrapper" >删除</div></a></td></tr></table></td>
+            </tr>
+         </table>
+
+    </div>
+
+</div>
 <div id="part5" style="display:none;margin-left:175px;height:85%;bottom:10%;"><img src="pic/H5.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:490px;"/></div>
-<div id="part6" style="display:none;margin-left:175px;height:85%;bottom:10%;"></div>
-<div id="part7" style="display:none;margin-left:175px;height:85%;bottom:10%;"><img src="pic/H7.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:490px;"/></div>
+<!--<div id="part6" style="display:none;margin-left:175px;height:85%;bottom:10%;"></div>-->
+<div id="part6" style="display:none;margin-left:175px;height:85%;bottom:10%;">
+  <img src="pic/H7.png" style="float:left;margin-left:5px;margin-top:5px;width:800px;height:490px;"/></div>
 
 <div class="paging" id="paging" >
     <table align="center" >
