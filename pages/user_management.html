@@ -183,8 +183,9 @@ $(function(){
              <tr> 
                 <td style="height:50px;"> <p class="contitle">用户组名称:</p>
                     <input type="text" class="inputtext" style="margin-top:9px;" name="userGroup">
-                    <input name="submit" type="image" class="btnbg" src="../css/images/checkout.gif" /> 
-                    <input name="add" type="image" id="PopupDivBtn_add"class="btnbg2"  src="../css/images/add.gif"/>
+                      <a href="#" ><div class="btnbg2">查&nbsp;&nbsp;询</div></a>
+                    <!--<input name="add" type="image" id="PopupDivBtn_add" class="btnbg2"  src="../css/images/add.gif"/>-->
+                    <a href="#" id="PopupDivBtn_add"><div class="btnbg2">添&nbsp;&nbsp;加</div></a>
         <!--添加用户组-->
                     <div  id="PopupDiv_add"style="display:none;width:625px;height:410px" align="center">
                          <table style="margin-top:10px;width:95%;">
@@ -239,8 +240,11 @@ $(function(){
                                   <td><input type="checkbox" id="checkbox7_2">&nbsp;备份与恢复</td><td></td><td></td>
                               </tr>
 
-                              <tr><td colspan="5" style="text-align:right;"><input  type="image" class="btnbg" src="../css/images/save.gif" />&nbsp;
-                              <input name="submit" type="image" id="PopupDivBtn_addclose" class="btnbg" src="../css/images/exit.gif" /></td></tr>
+                              <tr><td colspan="5">
+                                <a href="#"  id="PopupDivBtn_addclose"><div style="float:right;"class="btnbg2">退&nbsp;&nbsp;出</div></a>
+                                <a href="#" ><div style="float:right;" class="btnbg2">保&nbsp;&nbsp;存</div></a>
+                                </td>
+                              </tr>
                           </table>
                    <br/>
                  </div>
@@ -289,8 +293,10 @@ $(function(){
                             </div>
                             </td></tr>
                             <tr><td>备注：</td><td><input type="text" class="popupInputtext" ></td></tr>
-                            <tr><td colspan="2" style="text-align:center;"><input  type="image" class="btnbg" src="../css/images/save.gif" />&nbsp;
-                              <input name="submit" type="image" id="PopupDivBtn_editclose" class="btnbg" src="../css/images/exit.gif" /></td></tr>
+                            <tr><td colspan="2" >
+                              <a href="#" id="PopupDivBtn_editclose"><div style="float:right" class="btnbg2">退&nbsp;&nbsp;出</div></a>
+                              <a href="#" ><div style="float:right;" class="btnbg2">保&nbsp;&nbsp;存</div></a>
+                              </td></tr>
                           </table>
                    <br/>
                 </td>
@@ -350,8 +356,9 @@ $(function(){
                     <td style="width:23%"></td>
                     <td style="width:9%"></td>
                     <td style="width:23%">
-                        <input name="submit" type="image" class="btnbg" src="../css/images/checkout.gif" /> 
-                        <input name="add" type="image" id="PopupDivBtn_add_user" class="btnbg2" src="../css/images/add.gif"/>
+                        <a href="#" ><div class="btnbg2">查&nbsp;&nbsp;询</div></a>
+                        <a href="#" id="PopupDivBtn_add_user"><div class="btnbg2">添&nbsp;&nbsp;加</div></a>
+                       
                     </td>
              </tr> <tr><td></td></tr>
             </table>
@@ -378,9 +385,11 @@ $(function(){
                           <tr><td width="12%">所属用户组：</td><td width="30%"> <input type="checkbox"/>系统管理 &nbsp;&nbsp;<input type="checkbox"/>操作员</td><td width="43%" colspan="2"></td>
                           </tr>
 
-                            <tr><td colspan="4" style="text-align:right;"><input  type="image" class="btnbg" src="../css/images/save.gif" />&nbsp;
-                              <input  type="image"  class="btnbg" src="../css/images/checkuser.gif" />&nbsp;
-                              <input  type="image" id="PopupDivBtn_add_userclose" class="btnbg" src="../css/images/exit.gif" />
+                            <tr><td colspan="4" >
+                              <a href="#" id="PopupDivBtn_add_userclose"><div style="float:right" class="btnbg2">关&nbsp;&nbsp;闭</div></a>
+                              <a href="#" ><div style="float:right" class="btnbg2">检测用户</div></a>
+                              <a href="#" ><div style="float:right" class="btnbg2">保&nbsp;&nbsp;存</div></a>
+                              
                             </td></tr>
                           </table>
                    <br/>
@@ -438,8 +447,12 @@ $(function(){
                             </div></td>
                         </tr>
                             <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
-                            <tr><td colspan="2" style="text-align:center;"><input  type="image" class="btnbg" src="../css/images/save.gif" />&nbsp;
-                              <input name="submit" type="image" id="PopupDivBtn_edit_userclose" class="btnbg" src="../css/images/exit.gif" /></td></tr>
+                            <tr><td colspan="2">
+                             <a href="#" id="PopupDivBtn_edit_userclose"><div  style="float:right" class="btnbg2">关&nbsp;&nbsp;闭</div></a>
+                              <a href="#" ><div style="float:right;" class="btnbg2">保&nbsp;&nbsp;存</div></a>
+                             </td>
+                            </tr>
+                              
                           </table>
                    <br/>
                 </td>
@@ -461,9 +474,12 @@ $(function(){
       <tr><td styel="width:30%"><font color="#ff000;">*</font> 新密码</td><td style="width:70%"><input type="text" class="inputtext" ></td></tr>
       <tr><td class="light" colspan="2">密码由6-16个字符组成，区分大小写（不能是9位以下的纯数字，不能包含空格）<br/>为了提升您的密码安全性，建议使用英文字母加数字或符号的混合密码</td></tr>
       <tr><td styel="width:30%"><font color="#ff000;">*</font> 确认密码</td><td style="width:70%"><input type="text" class="inputtext" ></td></tr>
-      <tr><td colspan="2" style="text-align:center;height:50px;">
-       <input name="submit" type="image" class="tablebtn" src="../css/images/checkout.gif" />&nbsp;
-       <input name="add" type="image" class="tablebtn" src="../css/images/add.gif"/>
+      <tr><td colspan="2" style="height:50px;">
+        <table width="100%"><tr><td>
+         <a  style="text-align:center;" href="#" ><div style="float:right;" class="btnbg2">保&nbsp;&nbsp;存</div></a></td>
+          <td><a href="#" ><div style="float:none;" class="btnbg2">添&nbsp;&nbsp;加</div></a></td>
+       <!--<input name="submit" type="image" class="tablebtn" src="../css/images/checkout.gif" />&nbsp;
+       <input name="add" type="image" class="tablebtn" src="../css/images/add.gif"/>-->
       </td></tr>
 
       </table>

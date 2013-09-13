@@ -238,6 +238,7 @@ ul.vertical[rel=ver1] li a{
   /*position: absolute;*/
   float: left;
   margin: 10px 10px 0px 0px;
+
   width:84px;
   height:32px;  
   background: no-repeat top right;
@@ -246,10 +247,14 @@ ul.vertical[rel=ver1] li a{
   .btnbg2{
   /*position: absolute;*/
   float: left;
-  margin:10px 10px 0px 0px;
+  margin:8px 10px 0px 0px;
+  text-align: center;
+  line-height: 32px;
+  vertical-align: 32px;
+  color:#FFFFFF;
   width:84px;
   height:32px;  
-  background: no-repeat top right;
+  background: url(./images/btnbg.jpg);
  }
 .inputtext{
   /*margin: 0px 5px auto;
