@@ -72,7 +72,7 @@ $(function(){
                 if($("#searchTable2").is(":hidden")){
                     $("#fortable2").height($("#part2").height()-34+"px");
                 }else{
-                    $("#fortable2").height($("#part2").height()-125+"px");
+                    $("#fortable2").height($("#part2").height()-123+"px");
                 }
     })
 
@@ -88,14 +88,14 @@ $(function(){
         }
          if(part2.css('visibility')!="hidden"){
                 if($("#searchTable2").is(":visible")){
-                    $("#fortable2").height($("#part2").height()-125+"px");
+                    $("#fortable2").height($("#part2").height()-123+"px");
                 }else{
                     $("#fortable2").height($("#part2").height()-34+"px");
                 }
         }
              $("#listmenu2").click(function(){           
                
-                    $("#fortable2").height($("#part2").height()-125+"px");
+                    $("#fortable2").height($("#part2").height()-123+"px");
                 })
                 
        /* }
@@ -128,7 +128,7 @@ $(function(){
         $("#PopupDiv_edit").PopupDiv({
             PopupDivId: "PopupDivOut_edit",
             myclass: "myWrap2",
-            title:"编辑"
+            title:"编辑用户组"
         });
     })
    
@@ -153,7 +153,7 @@ $(function(){
         $("#PopupDiv_edit_user").PopupDiv({
             PopupDivId: "PopupDivOut_edit_user",
             myclass: "myWrap2",
-            title:"编辑"
+            title:"编辑用户"
         });
     })
    
@@ -171,7 +171,7 @@ $(function(){
                 <li><a href="#" onclick=css("clicked",1) id="listmenu1" class="clicked">用户组设置</a></li>
                 <li><a href="#" onclick=css("clicked",2) id="listmenu2">用户编辑</a></li>
                 <li><a href="#" onclick=css("clicked",3) id="listmenu3">密码修改</a></li> 
-                <li><a href="#" onclick=css("clicked",4) id="listmenu4">用户日志</a></li>   
+                <li><a href="#" onclick=css("clicked",4) id="listmenu4">工作日志</a></li>   
                 <!--<li><a rel="external nofollow" href="http://twitter.com/insic">Twitter @insic</a></li>-->
 
             </ul>
@@ -274,7 +274,72 @@ $(function(){
         </tr>
     </table>
 <!--用户组部分-编辑-->
-     <div  id="PopupDiv_edit"  style="display:none;width:350px;" align="center">
+<div  id="PopupDiv_edit"style="display:none;width:625px;height:410px" align="center">
+                         <table style="margin-top:10px;width:95%;">
+                            <tr><td width="18%"><font color="red">*</font>&nbsp;用户组级别:</td><td width="32%" >
+                              <div style="background:#ffffff;">
+                              <div class="xmkc" style="border:0px;"> 
+                                <div><input name="class_jb2" id="class_jb2" readonly="readonly" type="text" class="selectlist" onClick=clicked('jb2'); value="请选择级别"></div>
+                                <div id="hh_jb2" style="display:none" class="classlist">
+                                   <ul>
+                                      <li class="lis"><a href="#" onClick="gets_value('ASP','jb2')">ASP</a></li>
+                                      <li class="lis"><a href="#" onClick="gets_value('PHP','jb2')">PHP</a></li>
+                                      <li class="lis"><a href="#" onClick="gets_value('JSP','jb2')">JSP</a></li>
+                                    </ul>
+                                    <a href="#"><span onclick="hh_jb2.style.display='none'" class="close">关闭</span></a>
+                                </div>
+                            </div>
+                          </div>
+                            </td>
+                            <td width="18%"><font color="red">*</font>&nbsp;用户组名称：</td><td width="32%"><input type="text" class="popupInputtext" ></td></tr>
+                            <tr><td width="18%" >&nbsp;&nbsp;备&nbsp;&nbsp;&nbsp;注：</td><td colspan="3"><input type="text" class="popupInputtext" ></td></tr>
+                            <tr><td colspan="4" style="border-bottom:2px solid rgb(100,100,100);height:20px;"></td></tr>
+                          </table>
+                            <table class="popupAdd" style="width:95%;">
+                              <tr>
+                                  <td style="border-right:1px solid;"> <input type="checkbox" id="checkbox1" onclick=chk('1','4')>&nbsp;车辆管理</td><td ><input type="checkbox" id="checkbox1_1">&nbsp;综合查询</td>
+                                  <td><input type="checkbox" id="checkbox1_2">&nbsp;轨迹查询</td><td><input type="checkbox" id="checkbox1_3">&nbsp;频度查询</td><td><input type="checkbox" id="checkbox1_4">&nbsp;违法统计</td>
+                              </tr>
+                              <tr>
+                                  <td style="border-right:1px solid;"> <input type="checkbox" id="checkbox2" onclick=chk('2','4')>&nbsp;监控点管理</td><td ><input type="checkbox" id="checkbox2_1">&nbsp;综合查询</td>
+                                  <td><input type="checkbox" id="checkbox2_2">&nbsp;流量统计</td><td><input type="checkbox" id="checkbox2_3">&nbsp;违法统计</td><td><input type="checkbox" id="checkbox2_4">&nbsp;监控点编辑</td>
+                              </tr>
+                              <tr>
+                                  <td style="border-right:1px solid;"> <input type="checkbox" id="checkbox3" onclick=chk('3','3')>&nbsp;设备管理</td><td ><input type="checkbox" id="checkbox3_1">&nbsp;综合查询</td>
+                                  <td><input type="checkbox" id="checkbox3_2">&nbsp;设备编辑</td><td><input type="checkbox" id="checkbox3_3">&nbsp;日志查询</td><td></td>
+                              </tr>
+                              <tr>
+                                  <td rowspan="2" style="border-right:1px solid;vertical-align:text-top;"><input type="checkbox" id="checkbox4" onclick=chk('4','7')>&nbsp;违法信息管理</td><td ><input type="checkbox" id="checkbox4_1">&nbsp;综合查询</td>
+                                  <td><input type="checkbox" id="checkbox4_2">&nbsp;违法数据录入</td><td><input type="checkbox" id="checkbox4_3">&nbsp;数据审核</td><td><input type="checkbox" id="checkbox4_4">&nbsp;数据复核</td>
+                              </tr><tr>
+                                  <td><input type="checkbox" id="checkbox4_5">&nbsp;违法公告</td><td><input type="checkbox" id="checkbox4_6">&nbsp;违法处理</td><td><input type="checkbox" id="checkbox4_7">&nbsp;白名单管理</td><td></td>
+                                </tr>
+                               <tr>
+                                  <td style="border-right:1px solid;"> <input type="checkbox" id="checkbox5" onclick=chk('5','3')>&nbsp;布控管理</td><td colspan="2"><input type="checkbox" id="checkbox5_1">&nbsp;布控设置（黑名单）</td>
+                                  <td><input type="checkbox" id="checkbox5_2">&nbsp;报警查询</td><td><input type="checkbox" id="checkbox5_3">&nbsp;报警统计</td>
+                              </tr>
+                              <tr>
+                                  <td style="border-right:1px solid;"> <input type="checkbox" id="checkbox6" onclick=chk('6','3')>&nbsp;用户组管理</td><td ><input type="checkbox" id="checkbox6_1">&nbsp;用户组设置</td>
+                                  <td><input type="checkbox" id="checkbox6_2">&nbsp;用户编辑</td><td><input type="checkbox" id="checkbox6_3">&nbsp;密码修改</td><td></td>
+                              </tr>
+                              <tr>
+                                  <td style="border-right:1px solid;"> <input type="checkbox" id="checkbox7" onclick=chk('7','2')>&nbsp;系统设置</td><td ><input type="checkbox" id="checkbox7_1">&nbsp;辖区设置</td>
+                                  <td><input type="checkbox" id="checkbox7_2">&nbsp;备份与恢复</td><td></td><td></td>
+                              </tr>
+
+                              <tr><td colspan="5">
+                                <a href="#"  id="PopupDivBtn_editclose"><div style="float:right;"class="btnbg2">退&nbsp;&nbsp;出</div></a>
+                                <a href="#" ><div style="float:right;" class="btnbg2">保&nbsp;&nbsp;存</div></a>
+                                </td>
+                              </tr>
+                          </table>
+                   <br/>
+                 </div>
+                </td>
+             </tr>
+            </table>
+            </div>
+     <!--<div  id="PopupDiv_edit"  style="display:none;width:350px;" align="center">
                          <table style="margin-top:10px;width:85%;">
                           <tr><td width="30%">用户组名称：</td><td width="70%"><input type="text" class="popupInputtext" ></td></tr>
                             <tr><td width="30%">用户组级别:</td><td width="70%" bgcolor="#fff">
@@ -294,7 +359,7 @@ $(function(){
                             </td></tr>
                             <tr><td>备注：</td><td><input type="text" class="popupInputtext" ></td></tr>
                             <tr><td colspan="2" >
-                              <a href="#" id="PopupDivBtn_editclose"><div style="float:right" class="btnbg2">退&nbsp;&nbsp;出</div></a>
+                              <a href="#" id="PopupDivBtn_editclose"><div style="float:right;margin-right:0;" class="btnbg2">退&nbsp;&nbsp;出</div></a>
                               <a href="#" ><div style="float:right;" class="btnbg2">保&nbsp;&nbsp;存</div></a>
                               </td></tr>
                           </table>
@@ -302,7 +367,7 @@ $(function(){
                 </td>
              </tr>
             </table>
-            </div>
+            </div>-->
 <!--用户组部分-编辑End-->
     </div>
 <!--<img src="pic/user_edit.png" style="float:left;width:820px;height:500px;"/>-->
@@ -319,12 +384,12 @@ $(function(){
         <div id="searchTable2" style="display:block;margin-right: 15px;">
              <table  class="generalTable" cellspacing="0"> 
              <tr> 
-                <td style="width:9%"> <p class="contitle2">帐&nbsp;&nbsp;号</p></td>
+                <td style="width:9%"> <p style="text-align:center;margin-top:0;"class="contitle2">帐&nbsp;&nbsp;号</p></td>
                     <td style="width:23%"><input type="text" class="inputtext"  style="width:90%;" name="userGroup"></td>
-                    <td style="width:9%"><p class="contitle2">用户姓名</p></td>
+                    <td style="width:9%"><p style="text-align:center;margin-top:0;"class="contitle2">用户姓名</p></td>
                     <td style="width:23%"><input type="text" class="inputtext"  style="width:90%;" name="userGroup"></td>
-                   <td style="width:9%"> <p class="contitle2">用户组</p></td>
-                     <td style="width:23%"><div class="xmkc" style="border:0px;"> 
+                   <td style="width:8%"> <p style="margin-top:0;"class="contitle2">用户组</p></td>
+                     <td style="width:24%"><div class="xmkc" style="border:0px;margin-top:5px;"> 
                             <div><input name="class_yhz" id="class_yhz" readonly="readonly" type="text" class="selectlist" onClick=clicked('yhz'); value="请选择用户组"></div>
                             <div id="hh_yhz" style="display:none" class="classlist">
                                <ul>
@@ -339,7 +404,7 @@ $(function(){
                 </tr>
                 <tr>
                     <td style="width:9%">
-                        <p class="contitle2"> 归属辖区 </p></td>
+                        <p style="text-align:center;margin-top:0;" class="contitle2"> 归属辖区 </p></td>
                        <td style="width:23%"> <div class="xmkc" style="border:0px;"> 
                             <div><input name="class_xq" id="class_xq" readonly="readonly" type="text" class="selectlist" onClick=clicked('xq'); value="请选择辖区"></div>
                             <div id="hh_xq" style="display:none" class="classlist">
@@ -354,12 +419,13 @@ $(function(){
                     </td>
                     <td style="width:9%"></td>
                     <td style="width:23%"></td>
-                    <td style="width:9%"></td>
-                    <td style="width:23%">
-                        <a href="#" ><div class="btnbg2">查&nbsp;&nbsp;询</div></a>
-                        <a href="#" id="PopupDivBtn_add_user"><div class="btnbg2">添&nbsp;&nbsp;加</div></a>
+                    <td colspan="2">
+                     <a href="#" id="PopupDivBtn_add_user"><div style="float:right;margin-right:7%;;" class="btnbg2">添&nbsp;&nbsp;加</div></a>
+                        <a href="#" ><div style="float:right;" class="btnbg2">查&nbsp;&nbsp;询</div></a>
+                       
                        
                     </td>
+
              </tr> <tr><td></td></tr>
             </table>
 
@@ -386,7 +452,7 @@ $(function(){
                           </tr>
 
                             <tr><td colspan="4" >
-                              <a href="#" id="PopupDivBtn_add_userclose"><div style="float:right" class="btnbg2">关&nbsp;&nbsp;闭</div></a>
+                              <a href="#" id="PopupDivBtn_add_userclose"><div style="float:right;margin-right:0;" class="btnbg2">关&nbsp;&nbsp;闭</div></a>
                               <a href="#" ><div style="float:right" class="btnbg2">检测用户</div></a>
                               <a href="#" ><div style="float:right" class="btnbg2">保&nbsp;&nbsp;存</div></a>
                               
@@ -448,7 +514,7 @@ $(function(){
                         </tr>
                             <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
                             <tr><td colspan="2">
-                             <a href="#" id="PopupDivBtn_edit_userclose"><div  style="float:right" class="btnbg2">关&nbsp;&nbsp;闭</div></a>
+                             <a href="#" id="PopupDivBtn_edit_userclose"><div  style="float:right;margin-right:0;" class="btnbg2">关&nbsp;&nbsp;闭</div></a>
                               <a href="#" ><div style="float:right;" class="btnbg2">保&nbsp;&nbsp;存</div></a>
                              </td>
                             </tr>
@@ -466,7 +532,7 @@ $(function(){
 
 
 <div id="part3" style="display:none;margin-left:175px;height:85%;"><br/>
-<div class="small_filter_area" >密码修改</div>  
+  <div class="small_filter_area" >密码修改</div>  
    <div style="margin-right:15px;height:100%">
       <table  class="passTable"style="" cellspacing="0"> 
       <tr><td styel="width:30%"><font color="#ff000;">*</font> &nbsp;帐&nbsp;号</td><td style="width:70%"><input type="text" class="inputtext" ></td></tr>
@@ -474,17 +540,22 @@ $(function(){
       <tr><td styel="width:30%"><font color="#ff000;">*</font> 新密码</td><td style="width:70%"><input type="text" class="inputtext" ></td></tr>
       <tr><td class="light" colspan="2">密码由6-16个字符组成，区分大小写（不能是9位以下的纯数字，不能包含空格）<br/>为了提升您的密码安全性，建议使用英文字母加数字或符号的混合密码</td></tr>
       <tr><td styel="width:30%"><font color="#ff000;">*</font> 确认密码</td><td style="width:70%"><input type="text" class="inputtext" ></td></tr>
-      <tr><td colspan="2" style="height:50px;">
-        <table width="100%"><tr><td>
-         <a  style="text-align:center;" href="#" ><div style="float:right;" class="btnbg2">保&nbsp;&nbsp;存</div></a></td>
-          <td><a href="#" ><div style="float:none;" class="btnbg2">添&nbsp;&nbsp;加</div></a></td>
-       <!--<input name="submit" type="image" class="tablebtn" src="../css/images/checkout.gif" />&nbsp;
-       <input name="add" type="image" class="tablebtn" src="../css/images/add.gif"/>-->
-      </td></tr>
-
-      </table>
+      <tr>
+        <td colspan="2" style="height:50px;">
+          <table width="100%">
+            <tr><td>
+              <a  style="text-align:center;" href="#" ><div style="float:right;" class="btnbg2">确&nbsp;&nbsp;认</div></a></td>
+              <td><a href="#" ><div style="float:none;" class="btnbg2">取&nbsp;&nbsp;消</div></a></td>
+            </td></tr>
+          </table>
+        </td>
+      </tr>
+    </table>
   </div>
+
 </div>
+
+
 <div id="part4" style="display:none;"><br/></div>
 
 <div class="paging" id="paging">
