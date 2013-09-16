@@ -972,7 +972,7 @@ BottomBar = function(me){
 	var _PreBox = "<div id='taskPreBox' class='taskPreBox' _olddisplay='' style='display: none;'><a id='taskPre' class='taskPre' hidefocus='true' href='#'></a></div>";
 	var _taskContainner = "<div id='taskContainer' class='taskContainer' style=''></div>";
 	var bottonbarbg = "<div class='bottomBarBg'></div>";
-	var bottomBarBgTask = "<div class='bottomBarBgTask'><img src='images/complogo.png'style='position:absolute;padding:14px 0 0 0px;height:50px;width:250px;'></img></div>";
+	var bottomBarBgTask = "<div class='bottomBarBgTask'><!--<img src='images/complogo.png'style='position:absolute;padding:14px 0 0 0px;height:50px;width:250px;'></img>--></div>";
 	
 	return me  = {
 		init:function(){
